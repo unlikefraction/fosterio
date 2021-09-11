@@ -1,0 +1,7 @@
+:root{
+    /* Primary Colors to be used in events, buttons, etc */
+    --color-primary: rgb(45, 152, 218);
+    --color-danger: rgb(252, 92, 101);
+    --color-warning: rgb(254, 211, 48);
+    --color-success: rgb(38, 222, 129);
+}
