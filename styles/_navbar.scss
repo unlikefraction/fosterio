@@ -1,0 +1,40 @@
+
+nav{
+    height: auto;
+    width: 100%;
+    background: var(--off-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-links{
+    list-style-type: none;
+    display: flex;
+    width: auto;
+    // background: lightcyan;
+
+    li{
+        margin: 0 1rem;
+    }
+
+    a{
+        text-decoration: none;
+        color: var(--text-color);
+
+        &:hover{
+            color: var(--accent-color);
+        }
+    }
+}
+
+.nav-left-side{
+    display: flex;
+    align-items: center;
+
+    i{
+        margin-right: 1rem;
+        padding: 0.5rem;
+    }
+}

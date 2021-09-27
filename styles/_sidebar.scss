@@ -1,0 +1,130 @@
+.sidebar{
+    background: var(--off-background);
+    display: inline-block;
+    position: fixed;
+    width: var(--sidebar-open-width);
+    height: 100%;
+    transition: 0.5s all ease;
+    overflow: auto;
+    transform: translateX(-100%);
+
+    .sidebar-section{
+        position: relative;
+        margin: 2rem 0;
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    .sidebar-element{
+        margin: 1.2rem 0;
+
+        a, span{
+            text-decoration: none;
+            color: var(--link-color);
+            white-space: nowrap;
+            transition: 0.2s all ease;
+
+            &:hover{
+                color: var(--accent-color);
+            }
+        }
+
+        i{
+            margin: 0 0.4rem 0 0.1rem;
+            transition: 0.2s all ease;
+        }
+    }
+
+    .title{
+        border-bottom: 1px solid var(--text-color);
+        padding-bottom: 0.5rem;
+        margin: 0 0 1rem;
+        transition: 0.2s all ease;
+    }
+}
+
+.sidebar-open{
+    transform: translateX(0%);
+}
+
+.sidebar-partial{
+    overflow-x: hidden;
+    transform: translateX(0%);
+    animation: reducewidth 0.2s ease-in 0.2s forwards;
+    
+    .sidebar-section{
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background: var(--accent-color);
+        }
+
+        .title{
+            animation: fadeoff 0.3s ease forwards;
+        }
+
+        span{
+            animation: fadeoff 0.3s ease forwards;
+        }
+
+        i{
+            // background: lightpink;
+            padding: 0.5rem;
+            position: relative;
+            z-index: 2;
+
+            &::before{
+                position: relative;
+                z-index: 1;
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                z-index: 0;
+                background: var(--accent-color);
+                opacity: 0;
+                transition: 0.2s ease;
+            }
+
+            &:hover::after{
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+@keyframes fadeoff {
+    0%{
+        opacity: 1;
+        display: inherit;
+    }
+
+    95%{
+        opacity: 0;
+        display: inherit;
+
+    }
+
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes reducewidth {
+    100%{
+        width: var(--sidebar-partial-width);
+    }
+}

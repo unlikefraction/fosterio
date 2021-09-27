@@ -1,0 +1,46 @@
+
+:root{
+    // Primary Colors to be used in events, buttons, etc
+    --color-primary: rgb(45, 152, 218);
+    --color-danger: rgb(252, 92, 101);
+    --color-warning: rgb(254, 211, 48);
+    --color-success: rgb(38, 222, 129);
+    --color-taxi-yellow: rgb(247, 183, 49);
+    --color-leafy-green: rgb(32, 191, 107);
+    --color-light-purple: rgb(165, 94, 234);
+    --color-gloomy-purple: rgb(136, 84, 208);
+    --color-silver-grey: rgb(165, 177, 194);
+    --color-star-grey: rgb(209, 216, 224);
+    --color-teal: rgb(43, 203, 186);
+    --color-turquoise: rgb(15, 185, 177);
+    --color-desire-red: rgb(235, 59, 90);
+    --color-fusion-orange: rgb(253, 150, 68);
+    --color-concentrated-orange: rgb(250, 130, 49);
+    --color-matt-black: rgb(23, 23, 23);
+    --color-off-white: rgb(245,245,245);
+    --color-white: rgb(248, 251, 248);
+    --color-dark-blue: rgb(75, 123, 236);
+    --color-royal-blue: rgb(56, 103, 214);
+
+    // Colors to be used often in document
+    --text-color: var(--color-matt-black);
+    --off-background: var(--color-off-white);
+    --main-background: var(--color-white);
+    --accent-color: var(--color-gloomy-purple);
+    --link-color: var(--color-dark-blue);
+    --scrollbar-color: var(--color-silver-grey);
+
+    // Font Sizes
+    --text-size: 1em;
+    --h1-size: 2.4em;
+    --h2-size: 2em;
+    --h3-size: 1.8em;
+    --h4-size: 1.3em;
+    --h5-size: 1.1em;
+    --h6-size: 1em;
+    --title-size: var(--h5-size);
+    
+    // Dimentions
+    --sidebar-open-width: 13rem;
+    --sidebar-partial-width: 5.5rem;
+}
