@@ -1,3 +1,4 @@
+// Toggle Sidebar
 function sidebar_toggle(type){
     let sidebar = document.querySelector('.sidebar');
     let main = document.querySelector('.main');
@@ -21,7 +22,9 @@ function sidebar_toggle(type){
     }
 }
 
+
 window.addEventListener('DOMContentLoaded', (event)=>{
+    // Sidebar status to Main body
     let sidebar = document.querySelector('.sidebar');
     let main = document.querySelector('.main');
 
@@ -32,4 +35,5 @@ window.addEventListener('DOMContentLoaded', (event)=>{
     else if(sidebar.classList.contains('sidebar-open')){
         main.classList.add('complete-open');
     }
+    // Sidebar status instantiation ends
 })

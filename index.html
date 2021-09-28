@@ -2,33 +2,63 @@
 <html lang="en">
 <head>
     <title>Fosterio</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+
+    <!-- Logos -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+
+    <!-- JS Files -->
+    <script src="./scripts/router.js"></script>
     <script src="./scripts/fetchHtml.js"></script>
-
-    <!-- Styles -->
-    <div w3-include-html="./reuse/body_imports.html"></div>
-
-    <script>
-        includeHTML();
-    </script>
-
-    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <script src="./scripts/main.js"></script>
 </head>
 
 <body>
+    <!-- Path -->
+    <script>
+        path('/');
+    </script>
+
 
     <!-- Navbar -->
-    <div w3-include-html="./reuse/nav.html"></div>
+    <nav>
+        <div class="nav-left-side">
+            <i onclick="sidebar_toggle('partial')" class="ri-menu-2-line ri-xl pointer"></i>
+            <div class="logo"><a class="home_anchor"><h3 class="bold">Fosterio</h3></a></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://github.com/brainspoof/fosterio">GitHub</a></li>
+            <li><a href="https://github.com/brainspoof/fosterio">GitHub</a></li>
+            <li><a href="https://github.com/brainspoof/fosterio">GitHub</a></li>
+        </ul>
+    </nav>
+    <!-- Navbar ends -->
 
-    <script>
-        includeHTML();
-    </script>
+
 
     <!-- Sidebar -->
-    <div w3-include-html="./reuse/sidebar.html"></div>
+    <div class="sidebar sidebar-partial">
+        <!-- Section Layout -->
+        <div class="sidebar-section">
+            <div class="title">Layout</div>
+            <div class="sidebar-element"><a class="async" href="/layout/navbar.html"><i class="ri-layout-top-line"></i> <span>Navbar</span></a></div>
+            <div class="sidebar-element"><a class="async" href="/layout/sidebar.html"><i class="ri-layout-left-line"></i> <span>Sidebar</span></a></div>
+        </div>
+        
+    </div>
+    <!-- Sidebar ends -->
 
-    <script>
-        includeHTML();
-    </script>
+
 
     <!-- Main Content -->
 
@@ -38,8 +68,6 @@
     </div>
 
     <!-- End main -->
-
-    <script src="./scripts/main.js"></script>
 
 </body>
 </html>
