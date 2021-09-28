@@ -73,14 +73,15 @@ body {
 
 .main {
   -webkit-transition: 0.5s ease all;
-  transition: 0.5s ease all;
-  -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
+  transition: 0.8s ease all;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
   padding: 2% 4%;
 }
 
 .complete-open {
   margin-left: var(--sidebar-open-width);
+
 }
 
 .partial-open {
