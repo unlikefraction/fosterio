@@ -1,13 +1,19 @@
-const baseURL = "/fosterio/";
+const baseURL = "/";
+const baseHTML = "/main_content.html"
 
-function path(loc){
-    if(location.pathname !== baseURL){
+function path(loc, home=false){
+    if(home && !location.search.includes("?loadPage=")){
+        fetchHTML(loc, false);
+    }
+
+    else if(location.pathname !== baseURL){
         window.location = `${baseURL}?loadPage=${loc}`;
     }
+
     else{
         if(location.search.includes("?loadPage=")){
             let loadPage = location.search.replace("?loadPage=", "");
-            fetchHTML(loadPage);
+            fetchHTML(loadPage, true);
         }
     }
 }
@@ -17,13 +23,18 @@ function path(loc){
 
 function fetchHTML(file, addHistory=true) {
     // Fetch Page
-    fetch(baseURL + file)
+
+    fetch(location.origin + baseURL + file)
     .then(function(response) {
+        let main = document.querySelector('.main'); // Main div
         // When the page is loaded convert it to text
+        main.innerHTML = "";
+        main.classList.add("loading");
         return response.text()
     })
     .then(function(html) {
-        let main = document.querySelector('.main');
+        let main = document.querySelector('.main'); // Main div
+        main.classList.remove("loading");
         main.innerHTML = html;
 
         var parser = new DOMParser();
@@ -49,9 +60,25 @@ function fetchHTML(file, addHistory=true) {
     }
 }
 
+
+// On navigating History
 window.addEventListener('popstate', (event) => {
-    let loadPage = event.state.loadPage;
-    fetchHTML(loadPage, false);
+    console.log(event.state)
+    try{
+        // Load page from state.loadpage
+        let loadPage = event.state.loadPage;
+        fetchHTML(loadPage, false);
+    }
+    catch(err){
+        // Load home page
+        if(location.pathname === baseURL){
+            fetchHTML(baseHTML, false);
+        }
+
+        else{
+            console.error(err);
+        }
+    }
   });
 
 
@@ -74,5 +101,13 @@ window.addEventListener('DOMContentLoaded', (event)=>{
     make_async();
 
     // Make home_anchor point to anchor
-    document.querySelectorAll("a.home_anchor").forEach(anchor => {anchor.href = baseURL});
+    document.querySelectorAll("a.home_anchor").forEach(
+        anchor => {
+            anchor.href = baseURL;
+            anchor.addEventListener('click', (event) => {
+                event.preventDefault();
+                fetchHTML(baseHTML, false);
+                history.pushState({loadPage: baseHTML}, null, baseURL);
+            })
+        });
 })

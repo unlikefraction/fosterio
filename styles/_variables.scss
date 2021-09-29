@@ -29,6 +29,7 @@
     --accent-color: var(--color-gloomy-purple);
     --link-color: var(--color-dark-blue);
     --scrollbar-color: var(--color-silver-grey);
+    --loading-color: var(--color-silver-grey);
 
     // Font Sizes
     --text-size: 1em;
@@ -43,4 +44,9 @@
     // Dimentions
     --sidebar-open-width: 13rem;
     --sidebar-partial-width: 5.5rem;
+    --loading-square-side: 10rem;
+
+    // Main config
+    --main-top-bottom-padding: 2%;
+    --main-left-right-padding: 4%;
 }

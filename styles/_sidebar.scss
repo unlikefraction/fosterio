@@ -7,6 +7,7 @@
     transition: 0.5s all ease;
     overflow: auto;
     transform: translateX(-100%);
+    z-index: 2;
 
     .sidebar-section{
         position: relative;

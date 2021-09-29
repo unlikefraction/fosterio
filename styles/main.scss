@@ -36,20 +36,32 @@ body{
 }
 
 .main{
+    position: relative;
     transition: 0.5s ease all;
     transition-delay: 0.4s;
-    padding: 2% 4%;
+    padding: var(--main-top-bottom-padding) var(--main-left-right-padding);
 }
 
 .complete-open{
-    margin-left: var(--sidebar-open-width);
+    padding-left: calc(var(--sidebar-open-width) + var(--main-left-right-padding));
 }
 
 .partial-open{
-    margin-left: var(--sidebar-partial-width);
+    padding-left: calc(var(--sidebar-partial-width) + var(--main-left-right-padding));
 }
 
-
+.loader{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: var(--loading-square-side);
+    height: var(--loading-square-side);
+    border: 2px var(--loading-color) solid;
+    border-radius: 0;
+    background: transparent;
+    transform: translate(-50%);
+    transform: rotateZ(0deg);
+}
 
 // Imports
 @import './navbar';
