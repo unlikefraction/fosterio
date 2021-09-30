@@ -39,15 +39,19 @@ body{
     position: relative;
     transition: 0.5s ease all;
     transition-delay: 0.4s;
+}
+
+.container{
+    position: relative;
     padding: var(--main-top-bottom-padding) var(--main-left-right-padding);
 }
 
 .complete-open{
-    padding-left: calc(var(--sidebar-open-width) + var(--main-left-right-padding));
+    padding-left: var(--sidebar-open-width);
 }
 
 .partial-open{
-    padding-left: calc(var(--sidebar-partial-width) + var(--main-left-right-padding));
+    padding-left: var(--sidebar-partial-width);
 }
 
 .loader{
@@ -61,6 +65,16 @@ body{
     background: transparent;
     transform: translate(-50%);
     transform: rotateZ(0deg);
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    .container{
+        padding: 1rem 2rem;
+    }
+
+    .complete-open, .partial-open{
+        padding-left: 0;
+    }
 }
 
 // Imports

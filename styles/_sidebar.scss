@@ -134,3 +134,10 @@
         width: var(--sidebar-partial-width);
     }
 }
+
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    .sidebar-partial{
+        transform: translateX(-100%);
+    }
+}
