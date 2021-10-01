@@ -34,10 +34,11 @@
         <!-- reverse-mobile-content is used to reverse the positions of toogle and the logo
         nav-left-side is the left side of the navbar on a desktop
          -->
-        <div class="nav-left-side reverse-mobile-content">
-            <i onclick="navToggle()" class="ri-menu-2-line ri-xl pointer"></i>
+        <div class="nav-left-side">
+            <i onclick="sidebar_toggle('partial')" class="ri-menu-2-line ri-xl pointer"></i>
             <div class="logo"><a class="home_anchor"><h3 class="bold">Fosterio</h3></a></div>
-            <i onclick="sidebar_toggle('partial')" class="ri-menu-3-line ri-xl pointer"></i>
+            <i onclick="navToggle()" class="ri-menu-3-line ri-xl pointer show-on-mobile"></i>
+            
         </div>
         <ul class="nav-links nav-on-mobile">
             <li onclick="navToggle()" class="close-nav-links">✕</li>

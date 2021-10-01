@@ -1,3 +1,5 @@
+let mobileBreakPoint = 650;
+
 // Toggle Sidebar
 function sidebar_toggle(type){
     let sidebar = document.querySelector('.sidebar');
@@ -54,13 +56,15 @@ window.addEventListener('DOMContentLoaded', (event)=>{
     }
 
     // Exit sidebar on mobile
-    let sidebar_elements = document.querySelectorAll('.sidebar-element');
+    if(document.scrollingElement.clientWidth < mobileBreakPoint){
+        let sidebar_elements = document.querySelectorAll('.sidebar-element');
 
-    sidebar_elements.forEach(sidebar_element => {
-        sidebar_element.addEventListener('click', e => {
-            sidebar_toggle();
+        sidebar_elements.forEach(sidebar_element => {
+            sidebar_element.addEventListener('click', e => {
+                sidebar_toggle();
+            })
         })
-    })
+    }
 })
 
 function navToggle(){

@@ -1,7 +1,4 @@
-
-.bold{
-    font-weight: bold;
-}
+// Font Sizes
 
 h1{
     font-size: var(--h1-size);
@@ -28,5 +25,31 @@ h6{
 }
 
 .title{
-    font-size: var(--h4-size);
+    font-size: var(--title-size);
+}
+
+.font-size-huge{
+    font-size: var(--huge-font-size);
+}
+
+// Font Weight
+
+.font-weight-bold{
+    font-weight: var(--font-bold-weight);
+}
+
+.font-weight-bolder{
+    font-weight: var(--font-bolder-weight);
+}
+
+.font-weight-lighter{
+    font-weight: var(--font-lighter-weight);
+}
+
+.font-weight-light{
+    font-weight: var(--font-light-weight);
+}
+
+.font-weight-normal{
+    font-weight: var(--font-normal-weight);
 }

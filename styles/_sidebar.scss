@@ -17,14 +17,27 @@
 
     .sidebar-element{
         margin: 1.2rem 0;
+        width: 100%;
 
         a, span{
+            position: relative;
+            width: 100%;
             text-decoration: none;
             color: var(--link-color);
             white-space: nowrap;
             transition: 0.2s all ease;
 
             &:hover{
+                color: var(--accent-color);
+            }
+        }
+
+        a{
+            display: block;
+            position: relative;
+            width: 100%;
+
+            &:hover span{
                 color: var(--accent-color);
             }
         }

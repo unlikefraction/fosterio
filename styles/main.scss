@@ -6,8 +6,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Urbanist;
-    font-size: 15px;
+    font-family: var(--font-family);
+    font-size: var(--defualt-font-size);
     color: var(--text-color);
     scrollbar-width: thin;
     scrollbar-color: var(--sidebar-color) transparent;
@@ -67,6 +67,10 @@ body{
     transform: rotateZ(0deg);
 }
 
+.show-on-mobile{
+    display: none;
+}
+
 @media only screen and (max-width: $mobile-breakpoint) {
     .container{
         padding: 1rem 2rem;
@@ -75,9 +79,14 @@ body{
     .complete-open, .partial-open{
         padding-left: 0;
     }
+
+    .show-on-mobile{
+        display:initial;
+    }
 }
 
 // Imports
 @import './navbar';
 @import './sidebar';
 @import './text';
+@import './column';

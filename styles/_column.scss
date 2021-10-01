@@ -1,0 +1,43 @@
+$numcols: 12;
+
+
+.row{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: lightgreen;
+}
+
+// col-1 -> 100/12
+// col-2 -> 100*2/12
+
+@for $i from 1 through $numcols{
+    .col-#{$i}{
+        width: calc(100%*#{$i}/#{$numcols});
+    }
+}
+
+@for $i from 1 through $numcols{
+    .col-lg-#{$i}{
+        width: calc(100%*#{$i}/#{$numcols});
+    }
+}
+
+// Tablet View
+@media only screen and (max-width: $tablet-breakpoint) {
+    @for $i from 1 through $numcols{
+        .col-md-#{$i}{
+            width: calc(100%*#{$i}/#{$numcols});
+        }
+    }
+}
+
+// Mobile View
+@media only screen and (max-width: $mobile-breakpoint) {
+    @for $i from 1 through $numcols{
+        .col-sm-#{$i}{
+            width: calc(100%*#{$i}/#{$numcols});
+        }
+    }
+}
