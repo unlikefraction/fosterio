@@ -10,9 +10,27 @@
     <h1>Navbar Page</h1>
     <p>Navbar on the top, doing hip hop!</p>
     
+    <code>
+        <h2>Hello</h2>
+    </code>
 </div>
 <script>
     document.title = "Navbar - Fosterio";
+
+    // code snippet
+    let codes = document.querySelectorAll("code")
+    let snippetContainers
+    let codeInnerHTML
+
+    codes.forEach((code) => {
+        // converting to snippet
+        codeInnerHTML = code.innerHTML
+        codeInnerHTML = codeInnerHTML.replace(/</g, "&lt");
+        codeInnerHTML = codeInnerHTML.replace(/>/g, "&gt");
+
+        // adding the snippet to html
+        code.innerHTML += `<h4 class='snippet'>${codeInnerHTML}</h4>`
+    })
 </script>
 
 <style>
