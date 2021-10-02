@@ -1,0 +1,12 @@
+.border{
+    border: var(--border-thickness) var(--border-color) var(--border-style);
+    border-radius: var(--border-radius);
+}
+
+$positions: top, bottom, left, right;
+
+@each $position in $positions {
+    .border-#{$position}{
+        border-#{$position}: var(--border-thickness) var(--border-color) var(--border-style);
+    }
+}

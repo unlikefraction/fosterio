@@ -35,8 +35,8 @@
     --defualt-size: 15px;
     --text-font-size: 1em;
     --huge-font-size: 3.5em;
-    --h1-size: 2.4em;
-    --h2-size: 2em;
+    --h1-size: 2.8em;
+    --h2-size: 2.2em;
     --h3-size: 1.8em;
     --h4-size: 1.3em;
     --h5-size: 1.1em;
@@ -54,7 +54,14 @@
     // Dimentions
     --sidebar-open-width: 13rem;
     --sidebar-partial-width: 5.5rem;
-    --loading-square-side: 10rem;
+    --loading-square-side: 3rem;
+    --loading-thickness: 5px;
+
+    // Border
+    --border-radius: 0.5rem;
+    --border-thickness: 1px;
+    --border-style: solid;
+    --border-color: var(--color-silver-grey);
 
     // Main config
     --main-top-bottom-padding: 2%;

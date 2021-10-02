@@ -35,6 +35,9 @@ body{
     background: var(--main-background);
 }
 
+
+// Main content
+
 .main{
     position: relative;
     transition: 0.5s ease all;
@@ -54,18 +57,40 @@ body{
     padding-left: var(--sidebar-partial-width);
 }
 
+// Loading Animation
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .loader{
-    position: absolute;
-    top: 90%;
-    left: 50%;
+    position: relative;
     width: var(--loading-square-side);
     height: var(--loading-square-side);
-    border: 2px var(--loading-color) solid;
-    border-radius: 0;
-    background: transparent;
-    transform: translate(-50%);
-    transform: rotateZ(0deg);
+    border: var(--loading-thickness) var(--loading-color) solid;
+    // border-bottom: 8px var(--accent-color) solid;
+    border-radius: 100%;
+    border-block-end: solid; 
+    border-block-end-color: var(--accent-color);
+    border-block-end-width: var(--loading-thickness);
+
+    animation: load 1s linear infinite;
 }
+
+@keyframes load {
+    from{
+        transform: rotateZ(0deg);
+    }
+
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+// Display
 
 .show-on-mobile{
     display: none;
@@ -90,3 +115,4 @@ body{
 @import './sidebar';
 @import './text';
 @import './column';
+@import './visual';

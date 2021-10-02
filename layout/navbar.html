@@ -5,31 +5,48 @@
     path('/layout/navbar.html');
 </script>
 
-<div class="container">
+<div class="row">
+    <div class="col-lg-9 col-sm-12">
+        <div class="container">
 
-    <h1>Navbar Page</h1>
-    <p>Navbar on the top, doing hip hop!</p>
-    
-    <code>
-        <h2>Hello</h2>
-    </code>
+            <h1>Navbar Page</h1>
+            <p>Navbar on the top, doing hip hop!</p>
+            
+
+
+<code class="border"><h1>Hello</h1>
+
+<div class="marquee">
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ad id eaque at eveniet sed ullam iure, nihil alias tenetur</div>
+</div></code>
+
+        </div>
+    </div>
 </div>
+
 <script>
     document.title = "Navbar - Fosterio";
 
     // code snippet
     let codes = document.querySelectorAll("code")
-    let snippetContainers
-    let codeInnerHTML
+    let snippetContainers, codeInnerHTML;
 
     codes.forEach((code) => {
         // converting to snippet
         codeInnerHTML = code.innerHTML
-        codeInnerHTML = codeInnerHTML.replace(/</g, "&lt");
-        codeInnerHTML = codeInnerHTML.replace(/>/g, "&gt");
+
+        codeInnerHTML = codeInnerHTML.replace(/[<>&\n ]/g, function(x) {
+            return {
+                '<': '&lt;',
+                '>': '&gt;',
+                '&': '&amp;',
+            '\n': '<br />',
+            ' ': '&nbsp;'
+            }[x];
+        });
 
         // adding the snippet to html
-        code.innerHTML += `<h4 class='snippet'>${codeInnerHTML}</h4>`
+        code.innerHTML += `<div class='code_snippet border-top'>${codeInnerHTML}</div>`
     })
 </script>
 

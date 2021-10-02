@@ -29,8 +29,8 @@
   --defualt-size: 15px;
   --text-font-size: 1em;
   --huge-font-size: 3.5em;
-  --h1-size: 2.4em;
-  --h2-size: 2em;
+  --h1-size: 2.8em;
+  --h2-size: 2.2em;
   --h3-size: 1.8em;
   --h4-size: 1.3em;
   --h5-size: 1.1em;
@@ -44,7 +44,12 @@
   --font-bolder-weight: 700;
   --sidebar-open-width: 13rem;
   --sidebar-partial-width: 5.5rem;
-  --loading-square-side: 10rem;
+  --loading-square-side: 3rem;
+  --loading-thickness: 5px;
+  --border-radius: 0.5rem;
+  --border-thickness: 1px;
+  --border-style: solid;
+  --border-color: var(--color-silver-grey);
   --main-top-bottom-padding: 2%;
   --main-left-right-padding: 4%;
 }
@@ -105,19 +110,53 @@ body {
   padding-left: var(--sidebar-partial-width);
 }
 
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
 .loader {
-  position: absolute;
-  top: 90%;
-  left: 50%;
+  position: relative;
   width: var(--loading-square-side);
   height: var(--loading-square-side);
-  border: 2px var(--loading-color) solid;
-  border-radius: 0;
-  background: transparent;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  -webkit-transform: rotateZ(0deg);
-          transform: rotateZ(0deg);
+  border: var(--loading-thickness) var(--loading-color) solid;
+  border-radius: 100%;
+  -webkit-border-after: solid;
+          border-block-end: solid;
+  border-block-end-color: var(--accent-color);
+  border-block-end-width: var(--loading-thickness);
+  -webkit-animation: load 1s linear infinite;
+          animation: load 1s linear infinite;
+}
+
+@-webkit-keyframes load {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes load {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
 }
 
 .show-on-mobile {
@@ -484,16 +523,63 @@ h6 {
   font-weight: var(--font-bolder-weight);
 }
 
-.font-weight-lighter {
-  font-weight: var(--font-lighter-weight);
-}
-
 .font-weight-light {
   font-weight: var(--font-light-weight);
 }
 
+.font-weight-lighter {
+  font-weight: var(--font-lighter-weight);
+}
+
 .font-weight-normal {
   font-weight: var(--font-normal-weight);
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee * {
+  -webkit-animation: marquee 15s linear infinite;
+          animation: marquee 15s linear infinite;
+}
+
+@-webkit-keyframes marquee {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-160%);
+            transform: translateX(-160%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-160%);
+            transform: translateX(-160%);
+  }
+}
+
+code {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  padding: var(--border-radius) 0 0 0;
+  margin: 1rem 0;
+}
+
+.code_snippet {
+  width: 100%;
+  text-overflow: string;
+  overflow: auto;
+  padding: 1.5rem;
 }
 
 .row {
@@ -504,7 +590,6 @@ h6 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
-  background-color: lightgreen;
 }
 
 .col-1 {
@@ -679,5 +764,26 @@ h6 {
   .col-sm-12 {
     width: calc(100%*12/12);
   }
+}
+
+.border {
+  border: var(--border-thickness) var(--border-color) var(--border-style);
+  border-radius: var(--border-radius);
+}
+
+.border-top {
+  border-top: var(--border-thickness) var(--border-color) var(--border-style);
+}
+
+.border-bottom {
+  border-bottom: var(--border-thickness) var(--border-color) var(--border-style);
+}
+
+.border-left {
+  border-left: var(--border-thickness) var(--border-color) var(--border-style);
+}
+
+.border-right {
+  border-right: var(--border-thickness) var(--border-color) var(--border-style);
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,4 +1,4 @@
-const baseURL = "/fosterio/";
+const baseURL = "/";
 const baseHTML = "/main_content.html"
 
 function path(loc, home=false){
@@ -28,7 +28,7 @@ function fetchHTML(file, addHistory=true) {
     .then(function(response) {
         let main = document.querySelector('.main'); // Main div
         // When the page is loaded convert it to text
-        main.innerHTML = "";
+        main.innerHTML = '<div class="loader"></div>';
         main.classList.add("loading");
         return response.text()
     })
