@@ -45,18 +45,3 @@ $weights: bold, bolder, light, lighter, normal;
         transform: translateX(-160%);
     }
 }
-
-code{
-    width: 100%;
-    display: block;
-    overflow: hidden;
-    padding: var(--border-radius) 0 0 0;
-    margin: 1rem 0;
-}
-
-.code_snippet{
-    width: 100%;
-    text-overflow: string;
-    overflow: auto;
-    padding: 1.5rem;
-}

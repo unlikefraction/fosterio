@@ -10,3 +10,10 @@ $positions: top, bottom, left, right;
         border-#{$position}: var(--border-thickness) var(--border-color) var(--border-style);
     }
 }
+
+
+// Positioning of the elements
+.fixed{
+    position: fixed;
+    z-index: 1001;
+}

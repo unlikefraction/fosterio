@@ -14,11 +14,47 @@
             
 
 
-<code class="border"><h1>Hello</h1>
+<code class="display-code-snippet border">
+    <nav>
+        <!-- reverse-mobile-content is used to reverse the positions of toogle and the logo
+        nav-left-side is the left side of the navbar on a desktop
+         -->
+        <div class="nav-left-side">
+            <i onclick="sidebar_toggle('partial')" class="ri-menu-2-line ri-xl pointer"></i>
+            <div class="logo"><a class="home_anchor"><h3 class="bold">Fosterio</h3></a></div>
+            <i onclick="navToggle()" class="ri-menu-3-line ri-xl pointer show-on-mobile"></i>
+            
+        </div>
+        <ul class="nav-links nav-on-mobile">
+            <li onclick="navToggle()" class="close-nav-links">✕</li>
+            <li><a href="https://github.com/brainspoof/fosterio">GitHub</a></li>
+            <li><a href="https://github.com/brainspoof/fosterio">Home</a></li>
+            <li><a href="https://github.com/brainspoof/fosterio">About Us</a></li>
+            <li>GitHub</li>
+        </ul>
+    </nav>
 
-<div class="marquee">
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ad id eaque at eveniet sed ullam iure, nihil alias tenetur</div>
-</div></code>
+    <div class="sidebar sidebar-partial">
+
+        <div class="sidebar-section">
+            <div class="title">Layout</div>
+            <div class="sidebar-element"><a class="async" href="../layout/navbar.html"><i class="ri-layout-top-line"></i> <span>Navbar</span></a></div>
+            <div class="sidebar-element"><a class="async" href="../layout/sidebar.html"><i class="ri-layout-left-line"></i> <span>Sidebar</span></a></div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="title">JavaScript</div>
+            <div class="sidebar-element"><a class="async" href="/jscore/router.html"><i class="ri-router-line"></i> <span>Router</span></a></div>
+        </div>
+        
+    </div>
+
+    <div class="main">
+        
+    </div>
+</code>
+
+
 
         </div>
     </div>
@@ -26,28 +62,8 @@
 
 <script>
     document.title = "Navbar - Fosterio";
-
-    // code snippet
-    let codes = document.querySelectorAll("code")
-    let snippetContainers, codeInnerHTML;
-
-    codes.forEach((code) => {
-        // converting to snippet
-        codeInnerHTML = code.innerHTML
-
-        codeInnerHTML = codeInnerHTML.replace(/[<>&\n ]/g, function(x) {
-            return {
-                '<': '&lt;',
-                '>': '&gt;',
-                '&': '&amp;',
-            '\n': '<br />',
-            ' ': '&nbsp;'
-            }[x];
-        });
-
-        // adding the snippet to html
-        code.innerHTML += `<div class='code_snippet border-top'>${codeInnerHTML}</div>`
-    })
+    loadCodeSnippet();
+    hljs.highlightAll();
 </script>
 
 <style>

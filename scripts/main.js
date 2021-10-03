@@ -1,4 +1,5 @@
 let mobileBreakPoint = 650;
+let tabletBreakpoint = 1024;
 
 // Toggle Sidebar
 function sidebar_toggle(type){
@@ -42,18 +43,32 @@ window.addEventListener('DOMContentLoaded', (event)=>{
     // Sidebar status instantiation ends
 
     // Navbar on mobile Animation
-    let nav = document.querySelector('.nav-on-mobile');
+    let navOnMobile = document.querySelector('.nav-on-mobile');
 
-    if(nav){
+    if(navOnMobile){
         let min_timedelay = 0.7;
         let delay_inc = 0.1;
-        let nav_children = nav.children;
+        let nav_children = navOnMobile.children;
 
         for(let li of nav_children){
             li.style.transitionDelay = `${min_timedelay}s`;
             min_timedelay += delay_inc;
         }
     }
+
+    // If nav is fixed, push the main down
+
+    let navs = document.querySelectorAll('nav');
+    let topMargin = 0;
+
+    navs.forEach(nav => {
+        if(nav.classList.contains('fixed')){
+            topMargin += nav.offsetHeight;
+        }
+    })
+
+    main.style.paddingTop = `${topMargin}px`;
+
 
     // Exit sidebar on mobile
     if(document.scrollingElement.clientWidth < mobileBreakPoint){

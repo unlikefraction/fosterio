@@ -19,6 +19,7 @@
   --color-white: rgb(248, 251, 248);
   --color-dark-blue: rgb(75, 123, 236);
   --color-royal-blue: rgb(56, 103, 214);
+  --color-night-blue: rgb(43,42,51);
   --text-color: var(--color-matt-black);
   --off-background: var(--color-off-white);
   --main-background: var(--color-white);
@@ -50,6 +51,7 @@
   --border-thickness: 1px;
   --border-style: solid;
   --border-color: var(--color-silver-grey);
+  --code-snippet-border-color: var(--color-night-blue);
   --main-top-bottom-padding: 2%;
   --main-left-right-padding: 4%;
 }
@@ -244,7 +246,7 @@ nav {
             justify-content: space-between;
   }
   .nav-on-mobile {
-    position: absolute;
+    position: fixed;
     top: -100%;
     left: 0;
     background-color: var(--off-background);
@@ -567,21 +569,6 @@ h6 {
   }
 }
 
-code {
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  padding: var(--border-radius) 0 0 0;
-  margin: 1rem 0;
-}
-
-.code_snippet {
-  width: 100%;
-  text-overflow: string;
-  overflow: auto;
-  padding: 1.5rem;
-}
-
 .row {
   position: relative;
   display: -webkit-box;
@@ -785,5 +772,45 @@ code {
 
 .border-right {
   border-right: var(--border-thickness) var(--border-color) var(--border-style);
+}
+
+.fixed {
+  position: fixed;
+  z-index: 1001;
+}
+
+iframe.code-snippet-output {
+  position: relative;
+  width: 100%;
+  border: 10px var(--code-snippet-border-color) solid;
+}
+
+code.display-code-snippet {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  padding: var(--border-radius) 0 0 0;
+  margin: 1rem 0;
+  padding-top: 1rem;
+  position: relative;
+}
+
+code.display-code-snippet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  width: 100%;
+  background: var(--code-snippet-border-color);
+  z-index: 1;
+}
+
+.hljs {
+  display: block;
+}
+
+.hljs-attr {
+  color: whitesmoke;
 }
 /*# sourceMappingURL=main.css.map */

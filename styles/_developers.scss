@@ -1,0 +1,48 @@
+$border-thickness: 10px;
+$top-bezel-thickness: 1rem;
+
+
+iframe.code-snippet-output{
+    position: relative;
+    width: 100%;
+    // height: 500px;
+    border: $border-thickness var(--code-snippet-border-color) solid;
+    // border: none;
+}
+
+
+code.display-code-snippet{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    padding: var(--border-radius) 0 0 0;
+    margin: 1rem 0;
+    padding-top: $top-bezel-thickness;
+    position: relative;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $top-bezel-thickness;
+        width: 100%;
+        background: var(--code-snippet-border-color);
+        z-index: 1;
+    }
+}
+
+// .code_snippet{
+//     width: 100%;
+//     white-space: nowrap;
+//     overflow: auto;
+//     padding: 1.5rem;
+// }
+
+.hljs{
+    display: block;
+}
+
+.hljs-attr{
+    color: whitesmoke;
+}

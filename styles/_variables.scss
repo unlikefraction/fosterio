@@ -21,6 +21,7 @@
     --color-white: rgb(248, 251, 248);
     --color-dark-blue: rgb(75, 123, 236);
     --color-royal-blue: rgb(56, 103, 214);
+    --color-night-blue: rgb(43,42,51);
 
     // Colors to be used often in document
     --text-color: var(--color-matt-black);
@@ -62,6 +63,7 @@
     --border-thickness: 1px;
     --border-style: solid;
     --border-color: var(--color-silver-grey);
+    --code-snippet-border-color: var(--color-night-blue);
 
     // Main config
     --main-top-bottom-padding: 2%;
