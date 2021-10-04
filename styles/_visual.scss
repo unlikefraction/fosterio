@@ -17,3 +17,15 @@ $positions: top, bottom, left, right;
     position: fixed;
     z-index: 1001;
 }
+
+// Scrollbar on chromium
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: var(--off-background); /* or add it to the track */
+  }
+  
+  /* Add a thumb */
+*::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+}

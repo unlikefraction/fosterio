@@ -5,29 +5,70 @@
     path('/layout/sidebar.html');
 </script>
 
-<div class="container">
+<div class="row">
+    <div class="col-lg-9 col-md-12">
+        <div class="container">
 
-    <h1 class="font-size-huge font-weight-light">Sidebar Page</h1>
-    <p class="title font-weight-lighter">Sidebar is all that we love!</p>
+            <h1 class="font-size-huge font-weight-light">Sidebar</h1>
+            <br>
+            <p class="title font-weight-lighter">Home for the things that <a class="async" href="/layout/navbar.html">navbar</a> can't handle.</p>
 
-    <div class="row">
-        <div class="col-lg-1 col-md-5 col-sm-4"><div class="box"></div></div>
-        <div class="col-lg-2 col-sm-4"><div class="box"></div></div>
-        <div class="col-lg-3 col-md-5 col-sm-4"><div class="box"></div></div>
+
+<!-- Sidebar demo #1 -->
+
+<code class="iframe-code-snippet border">
+
+    <div class="sidebar sidebar-open">
+        <div class="sidebar-section">
+            <div class="title">Main</div>
+            <div class="sidebar-element"><a><i class="ri-home-line"></i> <span>Home</span></a></div>
+            <div class="sidebar-element"><a><i class="ri-mail-unread-line"></i> <span>Messages</span></a></div>
+        </div>
     </div>
 
-    <code>
-        <h1>Nice</h1>
-    </code>
+    <div class="main"></div>
 
-    <code>
-        <h1>Hello</h1>
-    </code>
+    <button onclick="sidebar_toggle()" class="btn margin-20 top-right">Toggle</button>
+    
+</code>
 
+
+
+<!-- Sidebar demo #2 -->
+
+<code class="iframe-code-snippet border">
+
+    <div class="sidebar sidebar-open">
+        <div class="sidebar-section">
+            <div class="title">Main</div>
+            <div class="sidebar-element"><a><i class="ri-home-line"></i> <span>Home</span></a></div>
+            <div class="sidebar-element"><a><i class="ri-mail-unread-line"></i> <span>Messages</span></a></div>
+        </div>
+    </div>
+
+    <div class="main"></div>
+
+    <button onclick="sidebar_toggle('partial')" class="btn margin-20 top-right">Toggle</button>
+    
+</code>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="container fixed">
+            <h1 class="title font-weight-light">Index</h1>
+        </div>
+    </div>
 </div>
 
 <link rel="stylesheet" href="./layout_style.css">
 
 <script>
     document.title = "Sidebar - Fosterio";
+    make_async();
+    loadCodeSnippet();
 </script>

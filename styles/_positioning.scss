@@ -1,0 +1,11 @@
+.top-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@for $i from 1 through 100{
+    .margin-#{$i}{
+        margin: #{$i/10}rem;
+    }
+}

@@ -17,6 +17,7 @@ a{
     color: var(--link-color);
     text-decoration: none;
     transition: 0.2s all ease;
+    cursor: pointer;
 
     &:hover{
         color: var(--accent-color);
@@ -41,7 +42,6 @@ body{
 .main{
     position: relative;
     transition: 0.5s ease all;
-    transition-delay: 0.4s;
 }
 
 .container{
@@ -51,10 +51,12 @@ body{
 
 .complete-open{
     padding-left: var(--sidebar-open-width);
+    transition-delay: 0.2s;
 }
 
 .partial-open{
     padding-left: var(--sidebar-partial-width);
+    transition-delay: 0.4s;
 }
 
 // Loading Animation
@@ -117,3 +119,5 @@ body{
 @import './column';
 @import './visual';
 @import './developers';
+@import './positioning';
+@import './buttons';

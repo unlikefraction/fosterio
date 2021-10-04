@@ -2,7 +2,7 @@ $border-thickness: 10px;
 $top-bezel-thickness: 1rem;
 
 
-iframe.code-snippet-output{
+.code-snippet-output{
     position: relative;
     width: 100%;
     // height: 500px;
@@ -11,7 +11,7 @@ iframe.code-snippet-output{
 }
 
 
-code.display-code-snippet{
+code.iframe-code-snippet{
     width: 100%;
     display: block;
     overflow: hidden;
@@ -40,9 +40,68 @@ code.display-code-snippet{
 // }
 
 .hljs{
-    display: block;
+    background-color: var(--off-background);
+    color: var(--text-color);
+}
+
+.hljs-tag{
+    color: var(--color-royal-blue);
+}
+
+.hljs-name{
+    font-weight: var(--font-normal-weight);
+    color: var(--color-royal-blue) !important;
 }
 
 .hljs-attr{
-    color: whitesmoke;
+    color: var(--color-desire-red) !important;
+}
+
+.hljs-string{
+    color: var(--accent-color) !important;
+}
+
+.hljs-comment{
+    color: var(--color-silver-grey);
+}
+
+.hljs-keyword{
+    font-weight: var(--font-normal-weight);
+    color: teal !important;
+    font-style: oblique;
+}
+
+.hljs-number{
+    color: var(--color-concentrated-orange);
+}
+
+.hljs-title{
+    color: var(--color-royal-blue);
+    font-weight: var(--font-normal-weight);
+}
+
+.hljs-params{
+    color: var(--accent-color);
+}
+
+.hljs-variable{
+    color: var(--color-desire-red);
+}
+
+.hljs-property{
+    color: var(--color-shade-green);
+}
+
+.hljs-selector-tag{
+    font-weight: var(--font-normal-weight);
+    color: teal;
+}
+
+.hljs-attribute{
+    color: var(--color-desire-red);
+    font-weight: var(--font-normal-weight);
+}
+
+.hljs-built_in{
+    color: var(--accent-colors);
 }

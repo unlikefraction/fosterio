@@ -7,6 +7,7 @@
     --color-success: rgb(38, 222, 129);
     --color-taxi-yellow: rgb(247, 183, 49);
     --color-leafy-green: rgb(32, 191, 107);
+    --color-shade-green: rgb(0, 165, 104);
     --color-light-purple: rgb(165, 94, 234);
     --color-gloomy-purple: rgb(136, 84, 208);
     --color-silver-grey: rgb(165, 177, 194);
@@ -21,7 +22,7 @@
     --color-white: rgb(248, 251, 248);
     --color-dark-blue: rgb(75, 123, 236);
     --color-royal-blue: rgb(56, 103, 214);
-    --color-night-blue: rgb(43,42,51);
+    --color-night-blue: rgb(40, 44, 52);
 
     // Colors to be used often in document
     --text-color: var(--color-matt-black);
@@ -64,6 +65,7 @@
     --border-style: solid;
     --border-color: var(--color-silver-grey);
     --code-snippet-border-color: var(--color-night-blue);
+
 
     // Main config
     --main-top-bottom-padding: 2%;

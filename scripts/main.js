@@ -68,6 +68,11 @@ window.addEventListener('DOMContentLoaded', (event)=>{
     })
 
     main.style.paddingTop = `${topMargin}px`;
+    // 0.5s ease all
+    if(sidebar){
+        sidebar.style.paddingTop = `${topMargin}px`;
+        // 0.5s all ease
+    }
 
 
     // Exit sidebar on mobile

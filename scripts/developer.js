@@ -1,6 +1,6 @@
 function loadCodeSnippet(){
     // code snippet
-    let codes = document.querySelectorAll("code.display-code-snippet");
+    let codes = document.querySelectorAll("code.iframe-code-snippet");
     let snippetContainers, codeInnerHTML;
 
     codes.forEach((code) => {
@@ -18,6 +18,7 @@ function loadCodeSnippet(){
                         <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
                         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
                         <link rel="stylesheet" href="../styles/main.css">
+                        <link rel="stylesheet" href="../styles/iframe.css">
                         <\/head>
                         <body>${codeInnerHTML}
                         <script src="../scripts/main.js"><\/script>
@@ -42,7 +43,7 @@ function loadCodeSnippet(){
         code.innerHTML += `<div class='code_snippet border-top'><pre><code>${codeInnerHTML}</pre></code></div>`;
         
         // Make it look like its on the device
-        document.querySelectorAll('iframe.code-snippet-output').forEach(codeOutput => {
+        document.querySelectorAll('.code-snippet-output').forEach(codeOutput => {
             let iframeWidth = codeOutput.offsetWidth;
             let documentWidth = document.body.clientWidth;
             if(mobileBreakPoint >= documentWidth){
@@ -59,5 +60,8 @@ function loadCodeSnippet(){
                 codeOutput.style.height = `${iframeWidth*9/16}px`;
             }
         })
+
+        // Highlight Code
+        hljs.highlightAll();
     })
 }

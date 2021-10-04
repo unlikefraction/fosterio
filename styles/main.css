@@ -5,6 +5,7 @@
   --color-success: rgb(38, 222, 129);
   --color-taxi-yellow: rgb(247, 183, 49);
   --color-leafy-green: rgb(32, 191, 107);
+  --color-shade-green: rgb(0, 165, 104);
   --color-light-purple: rgb(165, 94, 234);
   --color-gloomy-purple: rgb(136, 84, 208);
   --color-silver-grey: rgb(165, 177, 194);
@@ -19,7 +20,7 @@
   --color-white: rgb(248, 251, 248);
   --color-dark-blue: rgb(75, 123, 236);
   --color-royal-blue: rgb(56, 103, 214);
-  --color-night-blue: rgb(43,42,51);
+  --color-night-blue: rgb(40, 44, 52);
   --text-color: var(--color-matt-black);
   --off-background: var(--color-off-white);
   --main-background: var(--color-white);
@@ -73,6 +74,7 @@ a {
   text-decoration: none;
   -webkit-transition: 0.2s all ease;
   transition: 0.2s all ease;
+  cursor: pointer;
 }
 
 a:hover {
@@ -95,8 +97,6 @@ body {
   position: relative;
   -webkit-transition: 0.5s ease all;
   transition: 0.5s ease all;
-  -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
 }
 
 .container {
@@ -106,10 +106,14 @@ body {
 
 .complete-open {
   padding-left: var(--sidebar-open-width);
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 
 .partial-open {
   padding-left: var(--sidebar-partial-width);
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
 }
 
 .loading {
@@ -779,13 +783,25 @@ h6 {
   z-index: 1001;
 }
 
-iframe.code-snippet-output {
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: var(--off-background);
+  /* or add it to the track */
+}
+
+/* Add a thumb */
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+}
+
+.code-snippet-output {
   position: relative;
   width: 100%;
   border: 10px var(--code-snippet-border-color) solid;
 }
 
-code.display-code-snippet {
+code.iframe-code-snippet {
   width: 100%;
   display: block;
   overflow: hidden;
@@ -795,7 +811,7 @@ code.display-code-snippet {
   position: relative;
 }
 
-code.display-code-snippet::before {
+code.iframe-code-snippet::before {
   content: "";
   position: absolute;
   top: 0;
@@ -807,10 +823,482 @@ code.display-code-snippet::before {
 }
 
 .hljs {
-  display: block;
+  background-color: var(--off-background);
+  color: var(--text-color);
+}
+
+.hljs-tag {
+  color: var(--color-royal-blue);
+}
+
+.hljs-name {
+  font-weight: var(--font-normal-weight);
+  color: var(--color-royal-blue) !important;
 }
 
 .hljs-attr {
-  color: whitesmoke;
+  color: var(--color-desire-red) !important;
+}
+
+.hljs-string {
+  color: var(--accent-color) !important;
+}
+
+.hljs-comment {
+  color: var(--color-silver-grey);
+}
+
+.hljs-keyword {
+  font-weight: var(--font-normal-weight);
+  color: teal !important;
+  font-style: oblique;
+}
+
+.hljs-number {
+  color: var(--color-concentrated-orange);
+}
+
+.hljs-title {
+  color: var(--color-royal-blue);
+  font-weight: var(--font-normal-weight);
+}
+
+.hljs-params {
+  color: var(--accent-color);
+}
+
+.hljs-variable {
+  color: var(--color-desire-red);
+}
+
+.hljs-property {
+  color: var(--color-shade-green);
+}
+
+.hljs-selector-tag {
+  font-weight: var(--font-normal-weight);
+  color: teal;
+}
+
+.hljs-attribute {
+  color: var(--color-desire-red);
+  font-weight: var(--font-normal-weight);
+}
+
+.hljs-built_in {
+  color: var(--accent-colors);
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.margin-1 {
+  margin: 0.1rem;
+}
+
+.margin-2 {
+  margin: 0.2rem;
+}
+
+.margin-3 {
+  margin: 0.3rem;
+}
+
+.margin-4 {
+  margin: 0.4rem;
+}
+
+.margin-5 {
+  margin: 0.5rem;
+}
+
+.margin-6 {
+  margin: 0.6rem;
+}
+
+.margin-7 {
+  margin: 0.7rem;
+}
+
+.margin-8 {
+  margin: 0.8rem;
+}
+
+.margin-9 {
+  margin: 0.9rem;
+}
+
+.margin-10 {
+  margin: 1rem;
+}
+
+.margin-11 {
+  margin: 1.1rem;
+}
+
+.margin-12 {
+  margin: 1.2rem;
+}
+
+.margin-13 {
+  margin: 1.3rem;
+}
+
+.margin-14 {
+  margin: 1.4rem;
+}
+
+.margin-15 {
+  margin: 1.5rem;
+}
+
+.margin-16 {
+  margin: 1.6rem;
+}
+
+.margin-17 {
+  margin: 1.7rem;
+}
+
+.margin-18 {
+  margin: 1.8rem;
+}
+
+.margin-19 {
+  margin: 1.9rem;
+}
+
+.margin-20 {
+  margin: 2rem;
+}
+
+.margin-21 {
+  margin: 2.1rem;
+}
+
+.margin-22 {
+  margin: 2.2rem;
+}
+
+.margin-23 {
+  margin: 2.3rem;
+}
+
+.margin-24 {
+  margin: 2.4rem;
+}
+
+.margin-25 {
+  margin: 2.5rem;
+}
+
+.margin-26 {
+  margin: 2.6rem;
+}
+
+.margin-27 {
+  margin: 2.7rem;
+}
+
+.margin-28 {
+  margin: 2.8rem;
+}
+
+.margin-29 {
+  margin: 2.9rem;
+}
+
+.margin-30 {
+  margin: 3rem;
+}
+
+.margin-31 {
+  margin: 3.1rem;
+}
+
+.margin-32 {
+  margin: 3.2rem;
+}
+
+.margin-33 {
+  margin: 3.3rem;
+}
+
+.margin-34 {
+  margin: 3.4rem;
+}
+
+.margin-35 {
+  margin: 3.5rem;
+}
+
+.margin-36 {
+  margin: 3.6rem;
+}
+
+.margin-37 {
+  margin: 3.7rem;
+}
+
+.margin-38 {
+  margin: 3.8rem;
+}
+
+.margin-39 {
+  margin: 3.9rem;
+}
+
+.margin-40 {
+  margin: 4rem;
+}
+
+.margin-41 {
+  margin: 4.1rem;
+}
+
+.margin-42 {
+  margin: 4.2rem;
+}
+
+.margin-43 {
+  margin: 4.3rem;
+}
+
+.margin-44 {
+  margin: 4.4rem;
+}
+
+.margin-45 {
+  margin: 4.5rem;
+}
+
+.margin-46 {
+  margin: 4.6rem;
+}
+
+.margin-47 {
+  margin: 4.7rem;
+}
+
+.margin-48 {
+  margin: 4.8rem;
+}
+
+.margin-49 {
+  margin: 4.9rem;
+}
+
+.margin-50 {
+  margin: 5rem;
+}
+
+.margin-51 {
+  margin: 5.1rem;
+}
+
+.margin-52 {
+  margin: 5.2rem;
+}
+
+.margin-53 {
+  margin: 5.3rem;
+}
+
+.margin-54 {
+  margin: 5.4rem;
+}
+
+.margin-55 {
+  margin: 5.5rem;
+}
+
+.margin-56 {
+  margin: 5.6rem;
+}
+
+.margin-57 {
+  margin: 5.7rem;
+}
+
+.margin-58 {
+  margin: 5.8rem;
+}
+
+.margin-59 {
+  margin: 5.9rem;
+}
+
+.margin-60 {
+  margin: 6rem;
+}
+
+.margin-61 {
+  margin: 6.1rem;
+}
+
+.margin-62 {
+  margin: 6.2rem;
+}
+
+.margin-63 {
+  margin: 6.3rem;
+}
+
+.margin-64 {
+  margin: 6.4rem;
+}
+
+.margin-65 {
+  margin: 6.5rem;
+}
+
+.margin-66 {
+  margin: 6.6rem;
+}
+
+.margin-67 {
+  margin: 6.7rem;
+}
+
+.margin-68 {
+  margin: 6.8rem;
+}
+
+.margin-69 {
+  margin: 6.9rem;
+}
+
+.margin-70 {
+  margin: 7rem;
+}
+
+.margin-71 {
+  margin: 7.1rem;
+}
+
+.margin-72 {
+  margin: 7.2rem;
+}
+
+.margin-73 {
+  margin: 7.3rem;
+}
+
+.margin-74 {
+  margin: 7.4rem;
+}
+
+.margin-75 {
+  margin: 7.5rem;
+}
+
+.margin-76 {
+  margin: 7.6rem;
+}
+
+.margin-77 {
+  margin: 7.7rem;
+}
+
+.margin-78 {
+  margin: 7.8rem;
+}
+
+.margin-79 {
+  margin: 7.9rem;
+}
+
+.margin-80 {
+  margin: 8rem;
+}
+
+.margin-81 {
+  margin: 8.1rem;
+}
+
+.margin-82 {
+  margin: 8.2rem;
+}
+
+.margin-83 {
+  margin: 8.3rem;
+}
+
+.margin-84 {
+  margin: 8.4rem;
+}
+
+.margin-85 {
+  margin: 8.5rem;
+}
+
+.margin-86 {
+  margin: 8.6rem;
+}
+
+.margin-87 {
+  margin: 8.7rem;
+}
+
+.margin-88 {
+  margin: 8.8rem;
+}
+
+.margin-89 {
+  margin: 8.9rem;
+}
+
+.margin-90 {
+  margin: 9rem;
+}
+
+.margin-91 {
+  margin: 9.1rem;
+}
+
+.margin-92 {
+  margin: 9.2rem;
+}
+
+.margin-93 {
+  margin: 9.3rem;
+}
+
+.margin-94 {
+  margin: 9.4rem;
+}
+
+.margin-95 {
+  margin: 9.5rem;
+}
+
+.margin-96 {
+  margin: 9.6rem;
+}
+
+.margin-97 {
+  margin: 9.7rem;
+}
+
+.margin-98 {
+  margin: 9.8rem;
+}
+
+.margin-99 {
+  margin: 9.9rem;
+}
+
+.margin-100 {
+  margin: 10rem;
+}
+
+.btn {
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 1px var(--text-color) solid;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
