@@ -1,4 +1,4 @@
-const baseURL = "/";
+const baseURL = "/fosterio/";
 const baseHTML = "/main_content.html"
 
 function path(loc, home=false){
