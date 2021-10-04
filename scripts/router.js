@@ -1,5 +1,5 @@
-const baseURL = "/fosterio/";
-const baseHTML = "/main_content.html"
+let baseURL = "/fosterio/";
+let baseHTML = "/main_content.html"
 
 function path(loc, home=false){
     if(home && !location.search.includes("?loadPage=")){
