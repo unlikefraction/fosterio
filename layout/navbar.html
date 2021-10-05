@@ -1,73 +1,200 @@
 <script src="../scripts/router.js"></script>
+<link rel="stylesheet" href="./layout_style.css">
 
 <!-- Path -->
 <script>
     path('/layout/navbar.html');
 </script>
 
+
 <div class="row">
     <div class="col-lg-9 col-md-12">
         <div class="container">
 
-            <h1>Navbar Page</h1>
-            <p>Navbar on the top, doing hip hop!</p>
+            <h1 class="font-size-huge font-weight-light">Navbar</h1>
+            <br>
+            <p class="title font-weight-lighter">The head, but not the brain.</p>
             
 
 
+<!-- Navbar demo #1 -->
+<a id="navbar"></a>
+<div class="code-demo">
+
+<h3 class="font-weight-normal">1. Navbar</h3>
+
+
+<!-- Just nav -->
+
 <code class="iframe-code-snippet border">
-    <nav>
-        <!-- reverse-mobile-content is used to reverse the positions of toogle and the logo
+
+    <!-- Navbar -->
+
+    <!-- Class 'fixed' is used to make things fixed. If you dont want that, remove the class.
+        fixed is not a nav specifix class. You can use it on everything that should not move. -->
+    <nav class="fixed">
+
+        <!-- You can add 'reverse-mobile-content' to reverse the positions of toogle and the logo on mobile
         nav-left-side is the left side of the navbar on a desktop
          -->
         <div class="nav-left-side">
-            <i onclick="sidebar_toggle('partial')" class="ri-menu-2-line ri-xl pointer"></i>
-            <div class="logo"><a class="home_anchor"><h3 class="bold">Fosterio</h3></a></div>
+            <i onclick="sidebar_toggle()" class="ri-menu-2-line ri-xl pointer"></i>
+            <div class="logo"><a><h3 class="bold">Fosterio</h3></a></div>
+
+            <!-- onclick="navToggle()" is used to make toggle navbar on the mobile -->
+            <!-- class 'show-on-mobile' is a generic class that hides it everywhere except mobile -->
             <i onclick="navToggle()" class="ri-menu-3-line ri-xl pointer show-on-mobile"></i>
             
         </div>
+
+        <!-- class 'nav-on-mobile' makes the navbar have a menu that can be toggled on mobile.
+        if you dont want that, remove the class 'nav-on-mobile'
+        do that only if you have just one link or a simple call to action button in the navbar -->
+
         <ul class="nav-links nav-on-mobile">
+
+            <!-- class 'close-nav-links' is a very special class reserved for navbar on mobile.
+            It is the logo or icon clicking which should toggle the navbar. -->
             <li onclick="navToggle()" class="close-nav-links">✕</li>
-            <li><a href="https://github.com/brainspoof/fosterio">GitHub</a></li>
-            <li><a href="https://github.com/brainspoof/fosterio">Home</a></li>
-            <li><a href="https://github.com/brainspoof/fosterio">About Us</a></li>
-            <li>GitHub</li>
+            <li><a target="_blank" href="https://github.com/brainspoof/fosterio">GitHub</a></li>
+            <li><a>Home</a></li>
+            <li><a>About Us</a></li>
         </ul>
     </nav>
-
-    <div class="sidebar sidebar-partial">
-
-        <div class="sidebar-section">
-            <div class="title">Layout</div>
-            <div class="sidebar-element"><a class="async" href="../layout/navbar.html"><i class="ri-layout-top-line"></i> <span>Navbar</span></a></div>
-            <div class="sidebar-element"><a class="async" href="../layout/sidebar.html"><i class="ri-layout-left-line"></i> <span>Sidebar</span></a></div>
-        </div>
-
-        <div class="sidebar-section">
-            <div class="title">JavaScript</div>
-            <div class="sidebar-element"><a class="async" href="/jscore/router.html"><i class="ri-router-line"></i> <span>Router</span></a></div>
-        </div>
-        
-    </div>
-
-    <div class="main">
-        <div class="container">
-            <h1>Nice</h1>
-        </div>
-    </div>
+    <!-- Navbar ends -->
 </code>
 
 
+<p class="quote">
+    A simple navbar to house all your items.
+</p>
+
+<p>
+    Enclose things inside <span class="code">nav</span> tag to make a navbar. Add the class <span class="code">fixed</span> to fix to the top of the page.
+</p>
+
+<p>
+    Class <span class="code">nav-left-side</span> is a special class for the left side of the navbar. You can add the class <span class="code">reverse-mobile-content</span> to reverse the positions of the nav left side elements on a mobile device.
+</p>
+
+<p>
+    <span class="code">sidebar_toggle()</span> is used to toggle the sidebar. See more about it in the <a class="async" href="../layout/sidebar.html">Sidebar</a>.
+</p>
+
+<p>
+    <span class="code">navToggle()</span> is used to toggle the navbar on a mobile device.
+</p>
+
+<p>
+    Class <span class="code">nav-links</span> is used to make the right side of the navbar composed of links. Its an Unordered link with its elements as List Items. <span class="code">nav-on-mobile</span> is used to make it a menu in a mobile device.
+    <span class="code">close-nav-links</span> is a class used to create a button to close the nav menu on a mobile if you add <span class="code">onclick="navToggle()"</span>
+</p>
+
+
+</div>
+
+
+<!-- Navbar demo #1 -->
+<a id="navbar-sidebar"></a>
+<div class="code-demo">
+
+<h3 class="font-weight-normal">2. Navbar-Sidebar</h3>
+
+
+<!-- Just nav -->
+
+<code class="iframe-code-snippet border">
+
+    <!-- Navbar -->
+
+    <!-- Class 'fixed' is used to make things fixed. If you dont want that, remove the class.
+        fixed is not a nav specifix class. You can use it on everything that should not move. -->
+    <nav class="fixed">
+
+        <!-- You can add 'reverse-mobile-content' to reverse the positions of toogle and the logo on mobile
+        nav-left-side is the left side of the navbar on a desktop
+         -->
+        <div class="nav-left-side">
+            <i onclick="sidebar_toggle()" class="ri-menu-2-line ri-xl pointer"></i>
+            <div class="logo"><a><h3 class="bold">Fosterio</h3></a></div>
+
+            <!-- onclick="navToggle()" is used to make toggle navbar on the mobile -->
+            <!-- class 'show-on-mobile' is a generic class that hides it everywhere except mobile -->
+            <i onclick="navToggle()" class="ri-menu-3-line ri-xl pointer show-on-mobile"></i>
+            
+        </div>
+
+        <!-- class 'nav-on-mobile' makes the navbar have a menu that can be toggled on mobile.
+        if you dont want that, remove the class 'nav-on-mobile'
+        do that only if you have just one link or a simple call to action button in the navbar -->
+
+        <ul class="nav-links nav-on-mobile">
+
+            <!-- class 'close-nav-links' is a very special class reserved for navbar on mobile.
+            It is the logo or icon clicking which should toggle the navbar. -->
+            <li onclick="navToggle()" class="close-nav-links">✕</li>
+            <li><a target="_blank" href="https://github.com/brainspoof/fosterio">GitHub</a></li>
+            <li><a>Home</a></li>
+            <li><a>About Us</a></li>
+        </ul>
+    </nav>
+    <!-- Navbar ends -->
+
+    <!-- Partial Sidebar -->
+    <div class="sidebar sidebar-open">
+
+        <!-- Class 'sidebar-section' helps Fosterio to understand different sections of your sidebar for better styling -->
+        <div class="sidebar-section">
+
+            <!-- Class 'title' is not a sidebar specific. Using it anywhere will make a titled text -->
+            <!-- Class 'sidebar-element' is used like 'li' for a 'ul' -->
+            <div class="title">Basic</div>
+            <div class="sidebar-element"><a><i class="ri-home-line"></i> <span>Home</span></a></div>
+            <div class="sidebar-element"><a><i class="ri-mail-unread-line"></i> <span>Messages</span></a></div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="title">Core</div>
+            <div class="sidebar-element"><a><i class="ri-line-chart-line"></i> <span>Analytics</span></a></div>
+        </div>
+    </div>
+
+    <div class="main"></div>
+</code>
+
+
+<p class="quote">
+    Navbar like <a href="#navbar">above</a> and <a class="async" href="../layout/sidebar.html">Sidebar</a> you'll love.
+</p>
+
+
+</div>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="container fixed">
+            <h1 class="title font-weight-light">Index</h1>
+            <ol>
+                <li><p><a href="#navbar">Navbar</a></p></li>
+                <li><p><a href="#navbar-sidebar">Navbar - Sidebar</a></p></li>
+                <!-- <li><p><a href="#hybrid-sidebar">Hybrid Sidebar</a></p></li> -->
+            </ol>
         </div>
     </div>
 </div>
 
 <script>
     document.title = "Navbar - Fosterio";
+    make_async();
     loadCodeSnippet();
 </script>
-
-<style>
-    h1{
-        color: blueviolet;
-    }
-</style>

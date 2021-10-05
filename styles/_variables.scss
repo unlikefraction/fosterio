@@ -9,7 +9,7 @@
     --color-leafy-green: rgb(32, 191, 107);
     --color-shade-green: rgb(0, 165, 104);
     --color-light-purple: rgb(165, 94, 234);
-    --color-gloomy-purple: rgb(136, 84, 208);
+    --color-gloomy-purple: rgb(135, 62, 238);
     --color-silver-grey: rgb(165, 177, 194);
     --color-star-grey: rgb(209, 216, 224);
     --color-teal: rgb(43, 203, 186);
@@ -29,6 +29,7 @@
     --off-background: var(--color-off-white);
     --main-background: var(--color-white);
     --accent-color: var(--color-gloomy-purple);
+    --accent-color-triad: 135, 62, 238;
     --link-color: var(--color-dark-blue);
     --scrollbar-color: var(--color-silver-grey);
     --loading-color: var(--color-silver-grey);
@@ -70,6 +71,8 @@
     // Main config
     --main-top-bottom-padding: 2%;
     --main-left-right-padding: 4%;
+    --default-top-bottom-margin: 1rem;
+    --defualt-line-height: 1.5rem;
 }
 
 $mobile-breakpoint: 650px;

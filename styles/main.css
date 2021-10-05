@@ -7,7 +7,7 @@
   --color-leafy-green: rgb(32, 191, 107);
   --color-shade-green: rgb(0, 165, 104);
   --color-light-purple: rgb(165, 94, 234);
-  --color-gloomy-purple: rgb(136, 84, 208);
+  --color-gloomy-purple: rgb(135, 62, 238);
   --color-silver-grey: rgb(165, 177, 194);
   --color-star-grey: rgb(209, 216, 224);
   --color-teal: rgb(43, 203, 186);
@@ -25,6 +25,7 @@
   --off-background: var(--color-off-white);
   --main-background: var(--color-white);
   --accent-color: var(--color-gloomy-purple);
+  --accent-color-triad: 135, 62, 238;
   --link-color: var(--color-dark-blue);
   --scrollbar-color: var(--color-silver-grey);
   --loading-color: var(--color-silver-grey);
@@ -55,6 +56,8 @@
   --code-snippet-border-color: var(--color-night-blue);
   --main-top-bottom-padding: 2%;
   --main-left-right-padding: 4%;
+  --default-top-bottom-margin: 1rem;
+  --defualt-line-height: 1.5rem;
 }
 
 * {
@@ -93,10 +96,16 @@ body {
   background: var(--main-background);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .main {
   position: relative;
-  -webkit-transition: 0.5s ease all;
-  transition: 0.5s ease all;
+  -webkit-transition: padding-left 0.5s ease;
+  transition: padding-left 0.5s ease;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .container {
@@ -313,8 +322,10 @@ nav {
   position: fixed;
   width: var(--sidebar-open-width);
   height: 100%;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   overflow: auto;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
@@ -571,6 +582,35 @@ h6 {
     -webkit-transform: translateX(-160%);
             transform: translateX(-160%);
   }
+}
+
+.code {
+  background: rgba(var(--accent-color-triad), 0.25);
+  padding: 0.1rem 0.5rem;
+  margin: 0 0.2rem;
+  border-radius: var(--border-radius);
+}
+
+.quote {
+  background: rgba(var(--accent-color-triad), 0.25);
+  border-left: 5px solid var(--accent-color);
+  padding: 1rem;
+  margin: var(--default-top-bottom-margin) 0;
+}
+
+.quote a {
+  text-decoration: underline;
+  color: var(--text-color);
+}
+
+.quote a:hover {
+  color: var(--accent-color);
+}
+
+p {
+  position: relative;
+  margin: var(--default-top-bottom-margin) 0;
+  line-height: var(--defualt-line-height);
 }
 
 .row {

@@ -1,4 +1,5 @@
 <script src="../scripts/router.js"></script>
+<link rel="stylesheet" href="./layout_style.css">
 
 <!-- Path -->
 <script>
@@ -12,46 +13,212 @@
             <h1 class="font-size-huge font-weight-light">Sidebar</h1>
             <br>
             <p class="title font-weight-lighter">Home for the things that <a class="async" href="/layout/navbar.html">navbar</a> can't handle.</p>
+            
 
 
 <!-- Sidebar demo #1 -->
+<a id="complete-sidebar"></a>
+<div class="code-demo">
+
+<h3 class="font-weight-normal">1. Complete Sidebar</h3>
+
+
+<!-- Complete Sidebar, just open and close -->
 
 <code class="iframe-code-snippet border">
 
+    <!-- Class 'sidebar' is required for any type of sidebar -->
+    <!-- Class 'sidebar-open' is used to open the sidebar by default
+    removing this will change the default sidebar behaviour to closed -->
+
+    <!-- Complete Sidebar -->
     <div class="sidebar sidebar-open">
+
+        <!-- Class 'sidebar-section' helps Fosterio to understand different sections of your sidebar for better styling -->
         <div class="sidebar-section">
-            <div class="title">Main</div>
+
+            <!-- Class 'title' is not a sidebar specific. Using it anywhere will make a titled text -->
+            <!-- Class 'sidebar-element' is used like 'li' for a 'ul' -->
+            <div class="title">Basic</div>
             <div class="sidebar-element"><a><i class="ri-home-line"></i> <span>Home</span></a></div>
             <div class="sidebar-element"><a><i class="ri-mail-unread-line"></i> <span>Messages</span></a></div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="title">Core</div>
+            <div class="sidebar-element"><a><i class="ri-line-chart-line"></i> <span>Analytics</span></a></div>
+            <div class="sidebar-element"><a><i class="ri-refund-2-line"></i> <span>Refunds</span></a></div>
         </div>
     </div>
 
     <div class="main"></div>
 
+    <!-- onclick="sidebar_toggle()" is required to toggle the sidebar. -->
     <button onclick="sidebar_toggle()" class="btn margin-20 top-right">Toggle</button>
     
 </code>
 
+<p class="quote">
+    Class <span class="code">sidebar</span> is required for all types of Sidebar.
+</p>
+
+<p>
+    When the page is loaded, class <span class="code">sidebar-open</span> is used to default the sidebar to be open unless toggled. Without the toggle, it will make the sidebar a fixed open sidebar.
+</p>
+
+<p>
+    Removing this makes the defalt behaviour of sidebar to be hidden unless toggled.
+</p>
+
+<p>
+    Toggling can be done easily by adding <span class="code">onclick="sidebar_toggle()"</span> to your toggle button.
+</p>
+
+<p>
+    Class <span class="code">sidebar-section</span> helps Fosterio to understand and style different sections of the sidebar. It is the most prominent in <a href="#partial-sidebar">Partial Sidebar</a>.
+</p>
+
+<p>
+    Class <span class="code">title</span> is a generic class and when used anywhere, will give a <span class="title">Titled font.</span>
+</p>
+
+<p>
+    Class <span class="code">sidebar-element</span> is a special class and is like what List items (li) is for Unordered List(ul). The link text in the sidebar should be inside a <span class="code">span</span> for proper styling.
+</p>
+
+</div>
 
 
 <!-- Sidebar demo #2 -->
+<a id="partial-sidebar"></a>
+<div class="code-demo">
+<h3 class="font-weight-normal">2. Partial Sidebar</h3>
+
+
+<!-- Partial Sidebar -->
 
 <code class="iframe-code-snippet border">
 
-    <div class="sidebar sidebar-open">
+    <!-- Class 'sidebar' is required for any type of sidebar -->
+    <!-- Class 'sidebar-partial' is used to open the sidebar to its partial position.
+    Removing this will change the default sidebar behaviour to closed -->
+
+    <!-- Partial Sidebar -->
+    <div class="sidebar sidebar-partial">
+
+        <!-- Class 'sidebar-section' helps Fosterio to understand different sections of your sidebar for better styling -->
         <div class="sidebar-section">
-            <div class="title">Main</div>
+
+            <!-- Class 'title' is not a sidebar specific. Using it anywhere will make a titled text -->
+            <!-- Class 'sidebar-element' is used like 'li' for a 'ul' -->
+            <div class="title">Basic</div>
             <div class="sidebar-element"><a><i class="ri-home-line"></i> <span>Home</span></a></div>
             <div class="sidebar-element"><a><i class="ri-mail-unread-line"></i> <span>Messages</span></a></div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="title">Core</div>
+            <div class="sidebar-element"><a><i class="ri-line-chart-line"></i> <span>Analytics</span></a></div>
+            <div class="sidebar-element"><a><i class="ri-refund-2-line"></i> <span>Refunds</span></a></div>
         </div>
     </div>
 
     <div class="main"></div>
 
+    <!-- onclick="sidebar_toggle('partial')" is required to toggle the sidebar. 
+        The parameter 'partial' is passed to toggle it partially. -->
     <button onclick="sidebar_toggle('partial')" class="btn margin-20 top-right">Toggle</button>
     
 </code>
 
+<p class="quote">
+    Partial Sidebar looks and behaves exactly like <a href="#complete-sidebar">Complete Sidebar</a> on a mobile.
+</p>
+
+<p>
+    When the page is loaded, class <span class="code">sidebar-partial</span> is used to default the sidebar to be partially open unless toggled. Without the toggle, it will make the sidebar a fixed partial sidebar.
+</p>
+
+<p>
+    Removing this makes the defalt behaviour of sidebar to be hidden unless toggled.
+</p>
+
+<p>
+    Toggling can be done easily by adding <span class="code">onclick="sidebar_toggle('partial')"</span> to your toggle button. Dont forget to pass 'partial' as an argument to the function. This tell the toggle not to close entirely instead make it a partial sidebar.
+</p>
+
+<p>
+    Class <span class="code">sidebar-section</span> helps Fosterio to understand and style different sections of the sidebar. It is the most prominent in <a href="#partial-sidebar">Partial Sidebar</a>.
+</p>
+
+<p>
+    Class <span class="code">title</span> is a generic class and when used anywhere, will give a <span class="title">Titled font.</span>
+</p>
+
+<p>
+    Class <span class="code">sidebar-element</span> is a special class and is like what List items (li) is for Unordered List(ul). The link text in the sidebar should be inside a <span class="code">span</span> for proper styling.
+</p>
+
+
+</div>
+
+<!-- Sidebar demo #3 -->
+<a id="hybrid-sidebar"></a>
+<div class="code-demo">
+<h3 class="font-weight-normal">3. Hybrid Sidebar</h3>
+
+
+<!-- Partial Sidebar -->
+
+<code class="iframe-code-snippet border">
+
+    <!-- Class 'sidebar' is required for any type of sidebar -->
+
+    <!-- Hybrid Sidebar -->
+    <div class="sidebar">
+
+        <!-- Class 'sidebar-section' helps Fosterio to understand different sections of your sidebar for better styling -->
+        <div class="sidebar-section">
+
+            <!-- Class 'title' is not a sidebar specific. Using it anywhere will make a titled text -->
+            <!-- Class 'sidebar-element' is used like 'li' for a 'ul' -->
+            <div class="title">Basic</div>
+            <div class="sidebar-element"><a><i class="ri-home-line"></i> <span>Home</span></a></div>
+            <div class="sidebar-element"><a><i class="ri-mail-unread-line"></i> <span>Messages</span></a></div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="title">Core</div>
+            <div class="sidebar-element"><a><i class="ri-line-chart-line"></i> <span>Analytics</span></a></div>
+            <div class="sidebar-element"><a><i class="ri-refund-2-line"></i> <span>Refunds</span></a></div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="container">
+            <p class="title">Click the Toggle Button</p>
+        </div>
+    </div>
+
+    <!-- onclick="sidebar_toggle('partial')" is required to toggle the sidebar partially. -->
+    <button onclick="sidebar_toggle('partial')" class="btn margin-20 top-right">Toggle</button>
+    
+</code>
+
+<p class="quote">
+    It starts being a <a href="#complete-sidebar">Complete Sidebar</a> then after toggling it once it becomes a <a href="#partial-sidebar">Partial Sidebar.</a>
+</p>
+
+<p>
+    The only difference between <a href="#hybrid-sidebar">Hybrid Sidebar</a> and <a href="#partial-sidebar">Partial Sidebar</a> is that, Hybrid Sidebar does not have class <span class="code">sidebar-partial</span>.
+</p>
+
+<p>
+    The only difference between <a href="#hybrid-sidebar">Hybrid Sidebar</a> and <a href="#complete-sidebar">Complete Sidebar</a> is that, Hybrid Sidebar passes 'partial' as a parameter to the function <span class="code">onclick="sidebar_toggle('partial')"</span>.
+</p>
+
+</div>
+<br><br>
 
 
 
@@ -61,6 +228,11 @@
     <div class="col-lg-3">
         <div class="container fixed">
             <h1 class="title font-weight-light">Index</h1>
+            <ol>
+                <li><p><a href="#complete-sidebar">Complete Sidebar</a></p></li>
+                <li><p><a href="#partial-sidebar">Partial Sidebar</a></p></li>
+                <li><p><a href="#hybrid-sidebar">Hybrid Sidebar</a></p></li>
+            </ol>
         </div>
     </div>
 </div>

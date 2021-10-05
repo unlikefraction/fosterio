@@ -36,12 +36,17 @@ body{
     background: var(--main-background);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 
 // Main content
 
 .main{
     position: relative;
-    transition: 0.5s ease all;
+    transition: padding-left 0.5s ease;
+    transition-delay: 0.3s;
 }
 
 .container{
