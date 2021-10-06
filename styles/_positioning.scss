@@ -4,8 +4,48 @@
     right: 0;
 }
 
-@for $i from 1 through 100{
-    .margin-#{$i}{
+// margin and padding
+
+@for $i from 0 through 25{
+    .margin-#{$i}, .m-#{$i}{
         margin: #{$i/10}rem;
+    }
+
+    .margin-left-#{$i}, .ml-#{$i}{
+        margin-left: #{$i/10}rem;
+    }
+
+    .margin-top-#{$i}, .mt-#{$i}{
+        margin-top: #{$i/10}rem;
+    }
+
+    .margin-right-#{$i}, .mr-#{$i}{
+        margin-right: #{$i/10}rem;
+    }
+
+    .margin-bottom-#{$i}, .mb-#{$i}{
+        margin: #{$i/10}rem;
+    }
+
+    // Padding
+
+    .padding-#{$i}, .p-#{$i}{
+        padding: #{$i/10}rem;
+    }
+
+    .padding-left-#{$i}, .pl-#{$i}{
+        padding-left: #{$i/10}rem;
+    }
+
+    .padding-top-#{$i}, .pt-#{$i}{
+        padding-top: #{$i/10}rem;
+    }
+
+    .padding-right-#{$i}, .pr-#{$i}{
+        padding-right: #{$i/10}rem;
+    }
+
+    .padding-bottom-#{$i}, .pb-#{$i}{
+        padding: #{$i/10}rem;
     }
 }
