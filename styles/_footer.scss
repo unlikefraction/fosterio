@@ -1,0 +1,24 @@
+footer{
+    position: relative;
+    background: var(--off-background);
+}
+
+// Tablet View
+@media only screen and (max-width: $tablet-breakpoint) {
+    .footer-info{
+        padding-bottom: 2rem;
+    }
+}
+
+// Mobile View
+@media only screen and (max-width: $mobile-breakpoint) {
+    .footer-info{
+        padding-bottom: 2rem;
+    }
+
+    .center-mobile-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

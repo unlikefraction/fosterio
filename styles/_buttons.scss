@@ -4,3 +4,25 @@
     border: 1px var(--text-color) solid;
     cursor: pointer;
 }
+
+
+.outline-btn{
+    cursor: pointer;
+    border: 2px var(--accent-color) solid;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    fill: var(--accent-color);
+    color: var(--accent-color);
+    transition: 0.2s;
+
+    &:hover{
+        background-color: var(--accent-color);
+        fill: var(--main-background);
+        color: var(--main-background);
+    }
+}
+
+.round-btn{
+    cursor: pointer;
+    border-radius: 10000rem;
+}

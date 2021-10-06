@@ -23,6 +23,7 @@ function loadCodeSnippet(){
                         <body>${codeInnerHTML}
                         <script src="../scripts/main.js"><\/script>
                         <script src="../scripts/router.js"><\/script>
+                        <script src="../scripts/deviframe.js"><\/script>
                         <\/body>
                         <\/html>`;
 

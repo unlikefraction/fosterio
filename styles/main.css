@@ -1981,4 +1981,55 @@ code.iframe-code-snippet::before {
   border: 1px var(--text-color) solid;
   cursor: pointer;
 }
+
+.outline-btn {
+  cursor: pointer;
+  border: 2px var(--accent-color) solid;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  fill: var(--accent-color);
+  color: var(--accent-color);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.outline-btn:hover {
+  background-color: var(--accent-color);
+  fill: var(--main-background);
+  color: var(--main-background);
+}
+
+.round-btn {
+  cursor: pointer;
+  border-radius: 10000rem;
+}
+
+footer {
+  position: relative;
+  background: var(--off-background);
+}
+
+@media only screen and (max-width: 1024px) {
+  .footer-info {
+    padding-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .footer-info {
+    padding-bottom: 2rem;
+  }
+  .center-mobile-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 /*# sourceMappingURL=main.css.map */
