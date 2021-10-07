@@ -16,7 +16,7 @@
 a{
     color: var(--link-color);
     text-decoration: none;
-    transition: 0.2s all ease;
+    transition: var(--transition-time) all ease;
     cursor: pointer;
 
     &:hover{

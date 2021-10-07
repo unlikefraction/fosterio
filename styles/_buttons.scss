@@ -13,7 +13,7 @@
     border-radius: var(--border-radius);
     fill: var(--accent-color);
     color: var(--accent-color);
-    transition: 0.2s;
+    transition: var(--transition-time);
 
     &:hover{
         background-color: var(--accent-color);
@@ -25,4 +25,57 @@
 .round-btn{
     cursor: pointer;
     border-radius: 10000rem;
+}
+
+// DropDown
+
+.dropdown{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    .dropdown-options{
+        display: none;
+        transition: var(--transition-time) opacity ease;
+        position: absolute;
+        top: 100%;
+        z-index: 10;
+        border-radius: var(--border-radius);
+        padding: 1rem 0;
+        background: var(--off-background);
+        // box-shadow: 0 0 30px rgba(var(--accent-color-triad), 0.4);
+        box-shadow: 0 0 20px var(--dropshadow-color);
+
+        .dropdown-item{
+            padding: 0.5rem 1rem;
+            transition: var(--transition-time) background ease;
+        }
+
+        .dropdown-item:hover{
+            background: rgba(var(--accent-color-triad), 0.2);
+        }
+    }
+
+    .dropdown-left{
+        left: 0;
+    }
+
+    .dropdown-right{
+        right: 0;
+    }
+
+    .dropdown-show{
+        display: inline-block;
+        animation: fade_dropdown var(--transition-time);
+    }
+}
+
+@keyframes fade_dropdown {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }

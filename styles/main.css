@@ -29,6 +29,7 @@
   --link-color: var(--color-dark-blue);
   --scrollbar-color: var(--color-silver-grey);
   --loading-color: var(--color-silver-grey);
+  --dropshadow-color: var(--color-star-grey);
   --defualt-size: 15px;
   --text-font-size: 1em;
   --huge-font-size: 3.5em;
@@ -54,6 +55,7 @@
   --border-style: solid;
   --border-color: var(--color-silver-grey);
   --code-snippet-border-color: var(--color-night-blue);
+  --transition-time: 0.2s;
   --main-top-bottom-padding: 2%;
   --main-left-right-padding: 4%;
   --default-top-bottom-margin: 1rem;
@@ -75,8 +77,8 @@
 a {
   color: var(--link-color);
   text-decoration: none;
-  -webkit-transition: 0.2s all ease;
-  transition: 0.2s all ease;
+  -webkit-transition: var(--transition-time) all ease;
+  transition: var(--transition-time) all ease;
   cursor: pointer;
 }
 
@@ -1989,8 +1991,8 @@ code.iframe-code-snippet::before {
   border-radius: var(--border-radius);
   fill: var(--accent-color);
   color: var(--accent-color);
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: var(--transition-time);
+  transition: var(--transition-time);
 }
 
 .outline-btn:hover {
@@ -2002,6 +2004,68 @@ code.iframe-code-snippet::before {
 .round-btn {
   cursor: pointer;
   border-radius: 10000rem;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown .dropdown-options {
+  display: none;
+  -webkit-transition: var(--transition-time) opacity ease;
+  transition: var(--transition-time) opacity ease;
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+  border-radius: var(--border-radius);
+  padding: 1rem 0;
+  background: var(--off-background);
+  -webkit-box-shadow: 0 0 20px var(--dropshadow-color);
+          box-shadow: 0 0 20px var(--dropshadow-color);
+}
+
+.dropdown .dropdown-options .dropdown-item {
+  padding: 0.5rem 1rem;
+  -webkit-transition: var(--transition-time) background ease;
+  transition: var(--transition-time) background ease;
+}
+
+.dropdown .dropdown-options .dropdown-item:hover {
+  background: rgba(var(--accent-color-triad), 0.2);
+}
+
+.dropdown .dropdown-left {
+  left: 0;
+}
+
+.dropdown .dropdown-right {
+  right: 0;
+}
+
+.dropdown .dropdown-show {
+  display: inline-block;
+  -webkit-animation: fade_dropdown var(--transition-time);
+          animation: fade_dropdown var(--transition-time);
+}
+
+@-webkit-keyframes fade_dropdown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade_dropdown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 footer {
