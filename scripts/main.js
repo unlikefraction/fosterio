@@ -118,18 +118,12 @@ window.addEventListener('DOMContentLoaded', (event)=>{
 
 
 // Show DropDown
-function showDropDown(dropdown, unclick=false){
+function showDropDown(dropdown){
     let dropdown_options = dropdown.querySelector('.dropdown-options');
 
     dropdown.addEventListener('mouseleave', (e) => {
         dropdown_options.classList.remove('dropdown-show');
     })
-
-    if(unclick){
-        document.querySelector('.main').addEventListener('click', (e) => {
-            dropdown_options.classList.remove('dropdown-show');
-        })
-    }
 
     dropdown_options.classList.add('dropdown-show');
 
@@ -143,7 +137,7 @@ function registerDropDown(){
         })
 
         dropdown.addEventListener('click', (e) => {
-            showDropDown(dropdown, unclick=true);
+            showDropDown(dropdown);
         })
     })
 }
