@@ -1,4 +1,4 @@
-let baseURL = "/";
+let baseURL = "/fosterio/";
 let baseHTML = "/main_content.html"
 
 function path(loc, home=false){
