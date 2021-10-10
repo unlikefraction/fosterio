@@ -5,6 +5,19 @@
     cursor: pointer;
 }
 
+.outline-btn-not-rounded{
+    padding: 0.3rem 1.5rem;
+    background: none;
+    outline: none;
+    border: 1px solid;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.1s all;
+
+    &:hover{
+        background: rgba(200, 200, 200, 0.2);
+    }
+}
 
 .outline-btn{
     cursor: pointer;
