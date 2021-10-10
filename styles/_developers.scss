@@ -42,6 +42,7 @@ code.iframe-code-snippet{
 .hljs{
     background-color: var(--off-background);
     color: var(--text-color);
+    position: relative;
 }
 
 .hljs-tag{
@@ -104,4 +105,12 @@ code.iframe-code-snippet{
 
 .hljs-built_in{
     color: var(--accent-colors);
+}
+
+// copy button
+.copyButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2rem;
 }
