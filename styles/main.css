@@ -867,6 +867,7 @@ code.iframe-code-snippet::before {
 .hljs {
   background-color: var(--off-background);
   color: var(--text-color);
+  position: relative;
 }
 
 .hljs-tag {
@@ -929,6 +930,30 @@ code.iframe-code-snippet::before {
 
 .hljs-built_in {
   color: var(--accent-colors);
+}
+
+.copyButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2rem;
+}
+
+.code-demo {
+  margin-top: 4rem;
+}
+
+.code_snippet {
+  position: relative;
+  background-color: aqua;
+}
+
+.code_snippet pre {
+  font-size: 0;
+}
+
+.code_snippet code {
+  font-size: var(--defualt-size);
 }
 
 .top-right {
@@ -1984,6 +2009,21 @@ code.iframe-code-snippet::before {
   cursor: pointer;
 }
 
+.outline-btn-not-rounded {
+  padding: 0.3rem 1.5rem;
+  background: none;
+  outline: none;
+  border: 1px solid;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: var(--transition-time) all;
+  transition: var(--transition-time) all;
+}
+
+.outline-btn-not-rounded:hover {
+  background: rgba(200, 200, 200, 0.2);
+}
+
 .outline-btn {
   cursor: pointer;
   border: 2px var(--accent-color) solid;
@@ -2010,6 +2050,7 @@ code.iframe-code-snippet::before {
   display: inline-block;
   position: relative;
   cursor: pointer;
+  background: lightgreen;
 }
 
 .dropdown .dropdown-options {
@@ -2048,6 +2089,15 @@ code.iframe-code-snippet::before {
   display: inline-block;
   -webkit-animation: fade_dropdown var(--transition-time);
           animation: fade_dropdown var(--transition-time);
+}
+
+.closedropdown {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 @-webkit-keyframes fade_dropdown {

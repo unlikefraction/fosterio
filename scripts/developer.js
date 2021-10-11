@@ -43,7 +43,12 @@ function loadCodeSnippet(){
         code.appendChild(iframe);
 
         // adding the snippet to html
-        code.innerHTML += `<div class='code_snippet border-top'><pre><code>${codeInnerHTML}</pre></code></div>`;
+        code.innerHTML += `<div class='code_snippet border-top'>
+                                <pre>
+                                    <code>${codeInnerHTML}</code>
+                                </pre>
+                                <button class="copyButton outline-btn-not-rounded m-7"><i class="ri-file-copy-fill mr-5 pt-1"></i> Copy</button>
+                            </div>`;
         
         // Make it look like its on the device
         document.querySelectorAll('.code-snippet-output').forEach(codeOutput => {
@@ -66,12 +71,6 @@ function loadCodeSnippet(){
 
         // Highlight Code
         hljs.highlightAll();
-        
-        // copy button
-        let copyButton = '<button class="copyButton outline-btn-not-rounded m-7"><i class="ri-file-copy-fill mr-5 pt-1"></i>Copy</button>'
-        document.querySelectorAll(".hljs").forEach((hljs) => {
-            hljs.innerHTML += copyButton
-        })
 
         // adding copy event to copy button
         let copyButtons = document.querySelectorAll(".copyButton")

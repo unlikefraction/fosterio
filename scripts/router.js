@@ -1,7 +1,13 @@
-let baseURL = "/fosterio/";
+let baseURL = "/";
 let baseHTML = "/main_content.html"
 
-function path(loc, home=false){
+function path(loc, home=false, force_reload=false){
+    console.log(document.querySelector('.main'));
+
+    // if(document.querySelector('.main') !== null && loc === location.pathname && !force_reload){
+    //     return '';
+    // }
+
     if(home && !location.search.includes("?loadPage=")){
         fetchHTML(loc, false);
     }

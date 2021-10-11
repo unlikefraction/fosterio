@@ -114,3 +114,20 @@ code.iframe-code-snippet{
     right: 0;
     height: 2rem;
 }
+
+.code-demo{
+    margin-top: 4rem;
+}
+
+.code_snippet{
+    position: relative;
+    background-color: aqua;
+
+    pre{
+        font-size: 0;
+    }
+    
+    code{
+        font-size: var(--defualt-size);
+    }
+}

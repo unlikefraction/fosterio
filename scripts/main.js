@@ -118,7 +118,7 @@ window.addEventListener('DOMContentLoaded', (event)=>{
 
 
 // Show DropDown
-function showDropDown(dropdown){
+function dropDownHover(dropdown){
     let dropdown_options = dropdown.querySelector('.dropdown-options');
 
     dropdown.addEventListener('mouseleave', (e) => {
@@ -129,15 +129,28 @@ function showDropDown(dropdown){
 
 }
 
+function dropDownClicked(dropdown){
+    let dropdown_options = dropdown.querySelector('.dropdown-options');
+
+    document.body.innerHTML += '<div class="closedropdown"></div>';
+    dropdown_options.classList.add('dropdown-show');
+
+    let closedd = document.querySelector('.closedropdown');
+    closedd.addEventListener('click', (e) => {
+        dropdown_options.classList.remove('dropdown-show');
+        closedd.remove();
+    });
+}
+
 // Register Dropdown on all dropdowns
 function registerDropDown(){
     document.querySelectorAll('.dropdown').forEach(dropdown => {
         dropdown.addEventListener('mouseenter', (e) => {
-            showDropDown(dropdown);
+            dropDownHover(dropdown);
         })
 
         dropdown.addEventListener('click', (e) => {
-            showDropDown(dropdown);
+            dropDownClicked(dropdown);
         })
     })
 }
