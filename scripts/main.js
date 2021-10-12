@@ -129,18 +129,7 @@ function dropDownHover(dropdown){
 
 }
 
-function dropDownClicked(dropdown){
-    let dropdown_options = dropdown.querySelector('.dropdown-options');
 
-    document.body.innerHTML += '<div class="closedropdown"></div>';
-    dropdown_options.classList.add('dropdown-show');
-
-    let closedd = document.querySelector('.closedropdown');
-    closedd.addEventListener('click', (e) => {
-        dropdown_options.classList.remove('dropdown-show');
-        closedd.remove();
-    });
-}
 
 // Register Dropdown on all dropdowns
 function registerDropDown(){
@@ -149,13 +138,8 @@ function registerDropDown(){
             dropDownHover(dropdown);
         })
 
-        dropdown.addEventListener('click', (e) => {
-            dropDownClicked(dropdown);
-        })
     })
 }
-
-
 
 // Toggle Navigation bar on mobile
 function navToggle(){
