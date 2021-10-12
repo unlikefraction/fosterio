@@ -2050,7 +2050,6 @@ code.iframe-code-snippet::before {
   display: inline-block;
   position: relative;
   cursor: pointer;
-  background: lightgreen;
 }
 
 .dropdown .dropdown-options {
@@ -2092,7 +2091,6 @@ code.iframe-code-snippet::before {
 }
 
 .closedropdown {
-  background: transparent;
   position: absolute;
   top: 0;
   left: 0;

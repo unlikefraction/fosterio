@@ -46,7 +46,6 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
-    background: lightgreen;
 
     .dropdown-options{
         display: none;
@@ -85,7 +84,7 @@
 }
 
 .closedropdown{
-    background: transparent;
+    // background: lightblue;
     position: absolute;
     top: 0;
     left: 0;
