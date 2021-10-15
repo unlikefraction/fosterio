@@ -69,6 +69,7 @@ function loadCodeSnippet(){
             }
         })
 
+
         // Highlight Code
         hljs.highlightAll();
 

@@ -2,7 +2,7 @@ let baseURL = "/";
 let baseHTML = "/main_content.html"
 
 function path(loc, home=false, force_reload=false){
-    console.log(document.querySelector('.main'));
+    console.log('Loading Path Now');
 
     // if(document.querySelector('.main') !== null && loc === location.pathname && !force_reload){
     //     return '';
@@ -49,7 +49,7 @@ function fetchHTML(file, addHistory=true) {
         var doc = parser.parseFromString(html, "text/html");
 
         try{
-            doc.body.querySelectorAll('script').forEach(s => eval(s.innerHTML));
+            doc.body.querySelectorAll('script').forEach(s => {if(!s.classList.contains('path')){eval(s.innerHTML)}});
         }
         catch{}
 

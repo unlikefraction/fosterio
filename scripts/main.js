@@ -93,7 +93,10 @@ window.addEventListener('DOMContentLoaded', (event)=>{
         }
     })
 
-    main.style.paddingTop = `${topMargin}px`;
+    if(main){
+        main.style.paddingTop = `${topMargin}px`;
+    }
+    
     // 0.5s ease all
     if(sidebar){
         sidebar.style.paddingTop = `${topMargin}px`;
@@ -118,25 +121,25 @@ window.addEventListener('DOMContentLoaded', (event)=>{
 
 
 // Show DropDown
-function dropDownHover(dropdown){
-    let dropdown_options = dropdown.querySelector('.dropdown-options');
+
+function dropDownHover(dropdown, dropdown_options){
 
     dropdown.addEventListener('mouseleave', (e) => {
         dropdown_options.classList.remove('dropdown-show');
     })
 
     dropdown_options.classList.add('dropdown-show');
-
 }
-
-
 
 // Register Dropdown on all dropdowns
 function registerDropDown(){
     document.querySelectorAll('.dropdown').forEach(dropdown => {
+        let dropdown_options = dropdown.querySelector('.dropdown-options');
+
         dropdown.addEventListener('mouseenter', (e) => {
-            dropDownHover(dropdown);
+            dropDownHover(dropdown, dropdown_options);
         })
+
 
     })
 }
