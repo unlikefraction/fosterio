@@ -843,7 +843,7 @@ p {
   border: 10px var(--code-snippet-border-color) solid;
 }
 
-code.iframe-code-snippet {
+code.iframe-code-snippet, code.simple-code-snippet {
   width: 100%;
   display: block;
   overflow: hidden;
@@ -853,7 +853,7 @@ code.iframe-code-snippet {
   position: relative;
 }
 
-code.iframe-code-snippet::before {
+code.iframe-code-snippet::before, code.simple-code-snippet::before {
   content: "";
   position: absolute;
   top: 0;
@@ -862,6 +862,10 @@ code.iframe-code-snippet::before {
   width: 100%;
   background: var(--code-snippet-border-color);
   z-index: 1;
+}
+
+.simple-snippet {
+  padding: 1rem;
 }
 
 .hljs {
@@ -954,6 +958,10 @@ code.iframe-code-snippet::before {
 
 .code_snippet code {
   font-size: var(--defualt-size);
+}
+
+.codeCopyTextArea {
+  display: none;
 }
 
 .top-right {

@@ -11,7 +11,7 @@ $top-bezel-thickness: 1rem;
 }
 
 
-code.iframe-code-snippet{
+code.iframe-code-snippet, code.simple-code-snippet{
     width: 100%;
     display: block;
     overflow: hidden;
@@ -30,6 +30,11 @@ code.iframe-code-snippet{
         background: var(--code-snippet-border-color);
         z-index: 1;
     }
+}
+
+.simple-snippet{
+    padding: 1rem;
+    // border: $border-thickness var(--code-snippet-border-color) solid;
 }
 
 // .code_snippet{
@@ -130,4 +135,8 @@ code.iframe-code-snippet{
     code{
         font-size: var(--defualt-size);
     }
+}
+
+.codeCopyTextArea{
+    display: none;
 }
