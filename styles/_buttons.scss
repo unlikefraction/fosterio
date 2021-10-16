@@ -5,6 +5,28 @@
     cursor: pointer;
 }
 
+
+$btnTypes: primary, warning, danger, success;
+
+@each $type in $btnTypes{
+    // Solid Buttons
+    .solid-#{$type}{
+        background: var(--color-#{$type});
+        border-color: var(--color-#{$type});
+        color: var(--main-background);
+        transition: var(--transition-time);
+
+        &:hover{
+            filter: brightness(1.15);
+        }
+    }
+
+    .outlined-#{$type}{
+        border-color: var(--color-#{$type});
+        color: var(--color-#{$type});
+    }
+}
+
 .outline-btn-not-rounded{
     padding: 0.3rem 1.5rem;
     background: none;

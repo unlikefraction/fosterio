@@ -1,8 +1,8 @@
 :root {
-  --color-primary: rgb(45, 152, 218);
-  --color-danger: rgb(252, 92, 101);
-  --color-warning: rgb(254, 211, 48);
-  --color-success: rgb(38, 222, 129);
+  --color-hazy-blue: rgb(31, 100, 143);
+  --color-eye-red: rgb(252, 92, 101);
+  --color-noon-yellow: rgb(254, 211, 48);
+  --color-apple-green: rgb(38, 222, 129);
   --color-taxi-yellow: rgb(247, 183, 49);
   --color-leafy-green: rgb(32, 191, 107);
   --color-shade-green: rgb(0, 165, 104);
@@ -30,6 +30,10 @@
   --scrollbar-color: var(--color-silver-grey);
   --loading-color: var(--color-silver-grey);
   --dropshadow-color: var(--color-star-grey);
+  --color-primary: var(--accent-color);
+  --color-danger: var(--color-eye-red);
+  --color-warning: var(--color-taxi-yellow);
+  --color-success: var(--color-apple-green);
   --defualt-size: 15px;
   --text-font-size: 1em;
   --huge-font-size: 3.5em;
@@ -2015,6 +2019,78 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
   background-color: transparent;
   border: 1px var(--text-color) solid;
   cursor: pointer;
+}
+
+.solid-primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--main-background);
+  -webkit-transition: var(--transition-time);
+  transition: var(--transition-time);
+}
+
+.solid-primary:hover {
+  -webkit-filter: brightness(1.15);
+          filter: brightness(1.15);
+}
+
+.outlined-primary {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.solid-warning {
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+  color: var(--main-background);
+  -webkit-transition: var(--transition-time);
+  transition: var(--transition-time);
+}
+
+.solid-warning:hover {
+  -webkit-filter: brightness(1.15);
+          filter: brightness(1.15);
+}
+
+.outlined-warning {
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.solid-danger {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+  color: var(--main-background);
+  -webkit-transition: var(--transition-time);
+  transition: var(--transition-time);
+}
+
+.solid-danger:hover {
+  -webkit-filter: brightness(1.15);
+          filter: brightness(1.15);
+}
+
+.outlined-danger {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.solid-success {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: var(--main-background);
+  -webkit-transition: var(--transition-time);
+  transition: var(--transition-time);
+}
+
+.solid-success:hover {
+  -webkit-filter: brightness(1.15);
+          filter: brightness(1.15);
+}
+
+.outlined-success {
+  border-color: var(--color-success);
+  color: var(--color-success);
 }
 
 .outline-btn-not-rounded {

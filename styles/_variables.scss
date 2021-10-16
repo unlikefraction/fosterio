@@ -1,10 +1,10 @@
 
 :root{
-    // Primary Colors to be used in events, buttons, etc
-    --color-primary: rgb(45, 152, 218);
-    --color-danger: rgb(252, 92, 101);
-    --color-warning: rgb(254, 211, 48);
-    --color-success: rgb(38, 222, 129);
+    // Colors to be used in events, buttons, etc
+    --color-hazy-blue: rgb(31, 100, 143);
+    --color-eye-red: rgb(252, 92, 101);
+    --color-noon-yellow: rgb(254, 211, 48);
+    --color-apple-green: rgb(38, 222, 129);
     --color-taxi-yellow: rgb(247, 183, 49);
     --color-leafy-green: rgb(32, 191, 107);
     --color-shade-green: rgb(0, 165, 104);
@@ -34,6 +34,12 @@
     --scrollbar-color: var(--color-silver-grey);
     --loading-color: var(--color-silver-grey);
     --dropshadow-color: var(--color-star-grey);
+
+    // Main Colors
+    --color-primary: var(--accent-color);
+    --color-danger: var(--color-eye-red);
+    --color-warning: var(--color-taxi-yellow);
+    --color-success: var(--color-apple-green);
 
     // Font Sizes
     --defualt-size: 15px;
