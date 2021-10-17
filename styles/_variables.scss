@@ -69,6 +69,7 @@
 
     // Border
     --border-radius: 0.5rem;
+    --small-border-radius: 3px;
     --border-thickness: 1px;
     --border-style: solid;
     --border-color: var(--color-silver-grey);
@@ -76,6 +77,7 @@
 
     // Feeling
     --transition-time: 0.2s;
+    --animation-time: var(--transition-time);
 
 
     // Main config

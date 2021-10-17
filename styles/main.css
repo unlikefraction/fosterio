@@ -55,11 +55,13 @@
   --loading-square-side: 3rem;
   --loading-thickness: 5px;
   --border-radius: 0.5rem;
+  --small-border-radius: 3px;
   --border-thickness: 1px;
   --border-style: solid;
   --border-color: var(--color-silver-grey);
   --code-snippet-border-color: var(--color-night-blue);
   --transition-time: 0.2s;
+  --animation-time: var(--transition-time);
   --main-top-bottom-padding: 2%;
   --main-left-right-padding: 4%;
   --default-top-bottom-margin: 1rem;
@@ -839,6 +841,24 @@ p {
 /* Add a thumb */
 *::-webkit-scrollbar-thumb {
   background: var(--scrollbar-color);
+}
+
+.no-transition {
+  -webkit-transition-duration: 0s !important;
+          transition-duration: 0s !important;
+  -webkit-animation-iteration-count: 0 !important;
+          animation-iteration-count: 0 !important;
+  -webkit-animation-duration: 0s !important;
+          animation-duration: 0s !important;
+}
+
+.no-transition:hover, .no-transition:focus, .no-transition:active {
+  -webkit-transition-duration: 0s !important;
+          transition-duration: 0s !important;
+  -webkit-animation-iteration-count: 0 !important;
+          animation-iteration-count: 0 !important;
+  -webkit-animation-duration: 0s !important;
+          animation-duration: 0s !important;
 }
 
 .code-snippet-output {
@@ -2017,8 +2037,53 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 .btn {
   padding: 0.5rem;
   background-color: transparent;
-  border: 1px var(--text-color) solid;
+  border: var(--border-thickness) var(--text-color) var(--border-style);
   cursor: pointer;
+  border-radius: var(--small-border-radius);
+  position: relative;
+}
+
+.btn:active {
+  -webkit-animation: clicked var(--animation-time) ease;
+          animation: clicked var(--animation-time) ease;
+}
+
+@-webkit-keyframes clicked {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  90% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes clicked {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  90% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .solid-primary {
@@ -2037,6 +2102,13 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 .outlined-primary {
   border-color: var(--color-primary);
   color: var(--color-primary);
+  -webkit-transition: var(--transition-time);
+  transition: var(--transition-time);
+}
+
+.outlined-primary:hover {
+  background: var(--color-primary);
+  color: var(--main-background);
 }
 
 .solid-warning {
@@ -2055,6 +2127,13 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 .outlined-warning {
   border-color: var(--color-warning);
   color: var(--color-warning);
+  -webkit-transition: var(--transition-time);
+  transition: var(--transition-time);
+}
+
+.outlined-warning:hover {
+  background: var(--color-warning);
+  color: var(--main-background);
 }
 
 .solid-danger {
@@ -2073,6 +2152,13 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 .outlined-danger {
   border-color: var(--color-danger);
   color: var(--color-danger);
+  -webkit-transition: var(--transition-time);
+  transition: var(--transition-time);
+}
+
+.outlined-danger:hover {
+  background: var(--color-danger);
+  color: var(--main-background);
 }
 
 .solid-success {
@@ -2091,6 +2177,13 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 .outlined-success {
   border-color: var(--color-success);
   color: var(--color-success);
+  -webkit-transition: var(--transition-time);
+  transition: var(--transition-time);
+}
+
+.outlined-success:hover {
+  background: var(--color-success);
+  color: var(--main-background);
 }
 
 .outline-btn-not-rounded {

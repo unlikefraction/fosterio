@@ -1,5 +1,7 @@
 <script src="../scripts/router.js"></script>
 
+<link rel="stylesheet" href="./component_style.css">
+
 <!-- Path -->
 <script>
     path('/components/buttons.html');
@@ -28,10 +30,11 @@
 <!-- 'solid-{type} renders a button of that type, dont forget to add the btn class. It looks horrible without it' -->
 <!-- You can change the colors by editing css variables for --color-{type} -->
 
+<!-- <button class="btn solid-basic">Basic</button> -->
 <button class="btn solid-primary">Primary</button>
 <button class="btn solid-warning">Warning</button>
 <button class="btn solid-success">Success</button>
-<button class="btn solid-danger">Danger</button>
+<button class="btn solid-danger no-transition">Danger</button>
 
 </div>
 
@@ -47,9 +50,11 @@
     2) warning<br>
     3) success<br>
     4) danger<br>
-    </p>
+</p>
 
 <p>Don't forget to add class <span class="code">btn</span> for it to look like a button.</p>
+
+<p><span class="code">no-transition</span> is a class that will disable all transition and animaitons on the element.</p>
 </div>
 
 

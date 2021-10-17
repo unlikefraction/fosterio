@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,eADW,CACX,IAAI,CAAA;EACA,UAAU,EAAE,MAAM;CACrB",
+    "sources": [
+        "component_style.scss"
+    ],
+    "names": [],
+    "file": "component_style.css"
+}

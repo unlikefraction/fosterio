@@ -1,8 +1,32 @@
 .btn{
     padding: 0.5rem;
     background-color: transparent;
-    border: 1px var(--text-color) solid;
+    border: var(--border-thickness) var(--text-color) var(--border-style);
     cursor: pointer;
+    border-radius: var(--small-border-radius);
+    position: relative;
+
+    &:active{
+        animation: clicked var(--animation-time) ease;
+    }
+}
+
+@keyframes clicked{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(0.9);
+    }
+
+    90%{
+        transform: scale(1.05);
+    }
+
+    100%{
+        transform: scale(1);
+    }
 }
 
 
@@ -19,11 +43,18 @@ $btnTypes: primary, warning, danger, success;
         &:hover{
             filter: brightness(1.15);
         }
+
     }
 
     .outlined-#{$type}{
         border-color: var(--color-#{$type});
         color: var(--color-#{$type});
+        transition: var(--transition-time);
+
+        &:hover{
+            background: var(--color-#{$type});
+            color: var(--main-background);
+        }
     }
 }
 

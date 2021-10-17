@@ -29,3 +29,16 @@ $positions: top, bottom, left, right;
 *::-webkit-scrollbar-thumb {
     background: var(--scrollbar-color);
 }
+
+// No Transition
+.no-transition{
+    transition-duration: 0s !important;
+    animation-iteration-count: 0 !important;
+    animation-duration: 0s !important;
+
+    &:hover, &:focus, &:active{
+        transition-duration: 0s !important;
+        animation-iteration-count: 0 !important;
+        animation-duration: 0s !important;
+    }
+}
