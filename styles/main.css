@@ -405,6 +405,9 @@ nav {
   left: 0;
   z-index: 1;
   width: 100vw;
+  background: var(--text-color);
+  -webkit-animation: fadein var(--animation-time) ease forwards;
+          animation: fadein var(--animation-time) ease forwards;
 }
 
 @-webkit-keyframes fadein {
@@ -412,7 +415,7 @@ nav {
     opacity: 0;
   }
   to {
-    opacity: 0.4;
+    opacity: 0.7;
   }
 }
 
@@ -421,45 +424,7 @@ nav {
     opacity: 0;
   }
   to {
-    opacity: 0.4;
-  }
-}
-
-@-webkit-keyframes blurin {
-  from {
-    -webkit-backdrop-filter: blur(0);
-            backdrop-filter: blur(0);
-  }
-  to {
-    -webkit-backdrop-filter: blur(0.2rem);
-            backdrop-filter: blur(0.2rem);
-  }
-}
-
-@keyframes blurin {
-  from {
-    -webkit-backdrop-filter: blur(0);
-            backdrop-filter: blur(0);
-  }
-  to {
-    -webkit-backdrop-filter: blur(0.2rem);
-            backdrop-filter: blur(0.2rem);
-  }
-}
-
-@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-  .closesidebaronmobile {
-    opacity: 1;
-    -webkit-animation: blurin var(--animation-time) ease forwards;
-            animation: blurin var(--animation-time) ease forwards;
-  }
-}
-
-@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-  .closesidebaronmobile {
-    background: var(--text-color);
-    -webkit-animation: fadein var(--animation-time) ease forwards;
-            animation: fadein var(--animation-time) ease forwards;
+    opacity: 0.7;
   }
 }
 
@@ -622,6 +587,18 @@ h6 {
 
 .font-weight-normal {
   font-weight: var(--font-normal-weight);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  -webkit-transition: var(--transition-time) all ease;
+  transition: var(--transition-time) all ease;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--accent-color);
 }
 
 .marquee {

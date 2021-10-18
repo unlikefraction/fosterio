@@ -46,13 +46,19 @@ function sidebar_toggle(type){
     // Closing sidebar on outoffocus on mobile
     if(screen.width <= mobileBreakPoint && sidebar.classList.contains('sidebar-open')){
         let closesidebaronmobile = document.createElement('div');
+        let screenHeight = screen.height;
+        let scrollHeight = document.body.scrollHeight;
         closesidebaronmobile.className = 'closesidebaronmobile';
-        closesidebaronmobile.style.height = document.body.scrollHeight + 'px';
+        closesidebaronmobile.style.height = (scrollHeight < screenHeight ? screenHeight : scrollHeight) + 'px';
         document.body.appendChild(closesidebaronmobile);
 
         closesidebaronmobile.addEventListener('click', (e) => {
             sidebar_toggle();
         });
+
+        closesidebaronmobile.addEventListener('touchstart', (e) => {
+            sidebar_toggle();
+        }, false);
     }
 
     else{

@@ -24,6 +24,19 @@ $weights: bold, bolder, light, lighter, normal;
     }
 }
 
+// Links
+
+a{
+    color: var(--link-color);
+    text-decoration: none;
+    transition: var(--transition-time) all ease;
+    cursor: pointer;
+
+    &:hover{
+        color: var(--accent-color);
+    }
+}
+
 
 // Custom Smooth Marquee
 
