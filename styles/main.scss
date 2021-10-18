@@ -13,17 +13,6 @@
     scrollbar-color: var(--sidebar-color) transparent;
 }
 
-a{
-    color: var(--link-color);
-    text-decoration: none;
-    transition: var(--transition-time) all ease;
-    cursor: pointer;
-
-    &:hover{
-        color: var(--accent-color);
-    }
-}
-
 i{
     fill: var(--text-color);
 }
