@@ -42,6 +42,22 @@ function sidebar_toggle(type){
             }
         }
     }
+
+    // Closing sidebar on outoffocus on mobile
+    if(screen.width <= mobileBreakPoint && sidebar.classList.contains('sidebar-open')){
+        let closesidebaronmobile = document.createElement('div');
+        closesidebaronmobile.className = 'closesidebaronmobile';
+        closesidebaronmobile.style.height = document.body.scrollHeight + 'px';
+        document.body.appendChild(closesidebaronmobile);
+
+        closesidebaronmobile.addEventListener('click', (e) => {
+            sidebar_toggle();
+        });
+    }
+
+    else{
+        document.querySelector('.closesidebaronmobile').remove();
+    }
 }
 
 
@@ -52,6 +68,7 @@ window.addEventListener('DOMContentLoaded', (event)=>{
     let footer = document.querySelector('footer');
 
     if(sidebar){
+        // Toggling Sidebar
         if(sidebar.classList.contains('sidebar-partial')){
             main.classList.add('partial-open');
             if(footer){
@@ -65,6 +82,7 @@ window.addEventListener('DOMContentLoaded', (event)=>{
                 footer.classList.add('complete-open');
             }
         }
+        
     }
     // Sidebar status instantiation ends
 

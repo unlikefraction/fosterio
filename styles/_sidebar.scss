@@ -65,6 +65,49 @@
     transform: translateX(0%);
 }
 
+.closesidebaronmobile{
+    // background-color: mediumvioletred;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+}
+
+@keyframes fadein{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 0.4;
+    }
+}
+
+@keyframes blurin{
+    from{
+        backdrop-filter: blur(0);
+    }
+
+    to{
+        backdrop-filter: blur(0.2rem);
+    }
+}
+
+@supports (backdrop-filter: blur(10px)){
+    .closesidebaronmobile{
+        opacity: 1;
+        animation: blurin var(--animation-time) ease forwards;
+    }
+}
+
+@supports not (backdrop-filter: blur(10px)){
+    .closesidebaronmobile{
+        background: var(--text-color);
+        animation: fadein var(--animation-time) ease forwards;
+    }
+}
+
 .sidebar-partial{
     overflow-x: hidden;
     transform: translateX(0%);
