@@ -80,18 +80,6 @@
   scrollbar-color: var(--sidebar-color) transparent;
 }
 
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  -webkit-transition: var(--transition-time) all ease;
-  transition: var(--transition-time) all ease;
-  cursor: pointer;
-}
-
-a:hover {
-  color: var(--accent-color);
-}
-
 i {
   fill: var(--text-color);
 }
@@ -870,6 +858,11 @@ p {
 .fixed {
   position: fixed;
   z-index: 1001;
+}
+
+.block {
+  display: block;
+  width: 100%;
 }
 
 *::-webkit-scrollbar {
@@ -2082,15 +2075,46 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 }
 
 .btn {
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem;
   background-color: transparent;
   border: var(--border-thickness) var(--text-color) var(--border-style);
   cursor: pointer;
   border-radius: var(--small-border-radius);
   position: relative;
+  font-size: var(--text-font-size);
 }
 
 .btn:active {
+  -webkit-animation: clicked var(--animation-time) ease;
+          animation: clicked var(--animation-time) ease;
+}
+
+.btn-md {
+  padding: 0.8rem 1.2rem;
+  background-color: transparent;
+  border: var(--border-thickness) var(--text-color) var(--border-style);
+  cursor: pointer;
+  border-radius: var(--small-border-radius);
+  position: relative;
+  font-size: var(--h4-size);
+}
+
+.btn-md:active {
+  -webkit-animation: clicked var(--animation-time) ease;
+          animation: clicked var(--animation-time) ease;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: var(--border-thickness) var(--text-color) var(--border-style);
+  cursor: pointer;
+  border-radius: var(--small-border-radius);
+  position: relative;
+  font-size: var(--h3-size);
+}
+
+.btn-lg:active {
   -webkit-animation: clicked var(--animation-time) ease;
           animation: clicked var(--animation-time) ease;
 }

@@ -1,4 +1,4 @@
-.simple-snippet .btn {
-  margin-top: 0.2rem;
+.simple-snippet .btn, .simple-snippet .btn-lg, .simple-snippet .btn-md {
+  margin: 0.2rem;
 }
 /*# sourceMappingURL=component_style.css.map */

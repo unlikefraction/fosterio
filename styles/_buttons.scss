@@ -1,15 +1,25 @@
-.btn{
-    padding: 0.5rem;
-    background-color: transparent;
-    border: var(--border-thickness) var(--text-color) var(--border-style);
-    cursor: pointer;
-    border-radius: var(--small-border-radius);
-    position: relative;
 
-    &:active{
-        animation: clicked var(--animation-time) ease;
+@mixin btnSize($ext, $paddingVertical, $paddingHorizontal, $fontSize) {
+    .btn#{$ext}{
+        padding: $paddingVertical $paddingHorizontal;
+        background-color: transparent;
+        border: var(--border-thickness) var(--text-color) var(--border-style);
+        cursor: pointer;
+        border-radius: var(--small-border-radius);
+        position: relative;
+        font-size: $fontSize;
+    
+        &:active{
+            animation: clicked var(--animation-time) ease;
+        }
     }
 }
+
+@include btnSize('', 0.5rem, 0.5rem, var(--text-font-size));
+@include btnSize('-md', 0.8rem, 1.2rem, var(--h4-size));
+@include btnSize('-lg', 1rem, 2rem, var(--h3-size));
+
+
 
 @keyframes clicked{
     0%{

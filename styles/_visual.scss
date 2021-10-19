@@ -18,6 +18,14 @@ $positions: top, bottom, left, right;
     z-index: 1001;
 }
 
+// Block Display
+
+.block{
+    display: block;
+    width: 100%;
+}
+
+
 // Scrollbar on chromium
 *::-webkit-scrollbar {
     width: 5px;
