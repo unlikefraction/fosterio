@@ -28,8 +28,13 @@
     --text-color: var(--color-matt-black);
     --off-background: var(--color-off-white);
     --main-background: var(--color-white);
-    --accent-color: var(--color-gloomy-purple);
+
+
     --accent-color-triad: 135, 62, 238;
+    --accent-color: rgba(var(--accent-color-triad), 1);
+    --accent-color-2: var(--accent-color);
+    --gradient-angle: 0deg;
+
     --link-color: var(--color-dark-blue);
     --scrollbar-color: var(--color-silver-grey);
     --loading-color: var(--color-silver-grey);
