@@ -2077,6 +2077,15 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 }
 
 .btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0.5rem 0.5rem;
   background-color: transparent;
   border: var(--border-thickness) var(--text-color) var(--border-style);
@@ -2092,6 +2101,15 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 }
 
 .btn-md {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0.8rem 1.2rem;
   background-color: transparent;
   border: var(--border-thickness) var(--text-color) var(--border-style);
@@ -2107,6 +2125,15 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 }
 
 .btn-lg {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 1rem 2rem;
   background-color: transparent;
   border: var(--border-thickness) var(--text-color) var(--border-style);
@@ -2163,6 +2190,7 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: var(--main-background);
+  fill: var(--main-background);
   -webkit-transition: var(--transition-time);
   transition: var(--transition-time);
 }
@@ -2175,6 +2203,7 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 .outlined-primary {
   border-color: var(--color-primary);
   color: var(--color-primary);
+  fill: var(--color-primary);
   -webkit-transition: var(--transition-time);
   transition: var(--transition-time);
 }
@@ -2184,10 +2213,21 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
   color: var(--main-background);
 }
 
+.outlined-primary:hover * {
+  color: var(--main-background);
+  fill: var(--main-background);
+}
+
+.outlined-primary * {
+  color: var(--color-primary);
+  fill: var(--color-primary);
+}
+
 .solid-warning {
   background: var(--color-warning);
   border-color: var(--color-warning);
   color: var(--main-background);
+  fill: var(--main-background);
   -webkit-transition: var(--transition-time);
   transition: var(--transition-time);
 }
@@ -2200,6 +2240,7 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 .outlined-warning {
   border-color: var(--color-warning);
   color: var(--color-warning);
+  fill: var(--color-warning);
   -webkit-transition: var(--transition-time);
   transition: var(--transition-time);
 }
@@ -2209,10 +2250,21 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
   color: var(--main-background);
 }
 
+.outlined-warning:hover * {
+  color: var(--main-background);
+  fill: var(--main-background);
+}
+
+.outlined-warning * {
+  color: var(--color-warning);
+  fill: var(--color-warning);
+}
+
 .solid-danger {
   background: var(--color-danger);
   border-color: var(--color-danger);
   color: var(--main-background);
+  fill: var(--main-background);
   -webkit-transition: var(--transition-time);
   transition: var(--transition-time);
 }
@@ -2225,6 +2277,7 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 .outlined-danger {
   border-color: var(--color-danger);
   color: var(--color-danger);
+  fill: var(--color-danger);
   -webkit-transition: var(--transition-time);
   transition: var(--transition-time);
 }
@@ -2234,10 +2287,21 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
   color: var(--main-background);
 }
 
+.outlined-danger:hover * {
+  color: var(--main-background);
+  fill: var(--main-background);
+}
+
+.outlined-danger * {
+  color: var(--color-danger);
+  fill: var(--color-danger);
+}
+
 .solid-success {
   background: var(--color-success);
   border-color: var(--color-success);
   color: var(--main-background);
+  fill: var(--main-background);
   -webkit-transition: var(--transition-time);
   transition: var(--transition-time);
 }
@@ -2250,6 +2314,7 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 .outlined-success {
   border-color: var(--color-success);
   color: var(--color-success);
+  fill: var(--color-success);
   -webkit-transition: var(--transition-time);
   transition: var(--transition-time);
 }
@@ -2257,6 +2322,16 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
 .outlined-success:hover {
   background: var(--color-success);
   color: var(--main-background);
+}
+
+.outlined-success:hover * {
+  color: var(--main-background);
+  fill: var(--main-background);
+}
+
+.outlined-success * {
+  color: var(--color-success);
+  fill: var(--color-success);
 }
 
 .outline-btn-not-rounded {
@@ -2274,24 +2349,11 @@ code.iframe-code-snippet::before, code.simple-code-snippet::before {
   background: rgba(200, 200, 200, 0.2);
 }
 
-.outline-btn {
-  cursor: pointer;
-  border: 2px var(--accent-color) solid;
-  padding: 0.5rem;
-  border-radius: var(--border-radius);
-  fill: var(--accent-color);
-  color: var(--accent-color);
-  -webkit-transition: var(--transition-time);
-  transition: var(--transition-time);
+.btn-icon i {
+  margin: 0 0.5rem 0 0;
 }
 
-.outline-btn:hover {
-  background-color: var(--accent-color);
-  fill: var(--main-background);
-  color: var(--main-background);
-}
-
-.round-btn {
+.btn-round {
   cursor: pointer;
   border-radius: 10000rem;
 }
