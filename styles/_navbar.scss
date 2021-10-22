@@ -16,6 +16,10 @@ nav{
 .nav-links{
     list-style-type: none;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
     width: auto;
     // background: lightcyan;
 
