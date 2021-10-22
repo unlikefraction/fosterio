@@ -56,3 +56,24 @@ $positions: top, bottom, left, right;
         animation-duration: 0s !important;
     }
 }
+
+// Alignment
+
+.align-horizontal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.align-vertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.align-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
