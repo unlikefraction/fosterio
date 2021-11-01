@@ -98,7 +98,6 @@ function parseCode(code){
         return {
             '<': '&lt;',
             '>': '&gt;',
-            '&': '&amp;',
             "'": '\'',
             '"': '\"',
             '`': '\`',

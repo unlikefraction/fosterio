@@ -109,12 +109,18 @@ html{
 }
 
 // Imports
-@import './navbar';
-@import './sidebar';
 @import './text';
-@import './column';
 @import './visual';
 @import './developers';
+
+// Layout
 @import './positioning';
-@import './buttons';
+@import './navbar';
+@import './sidebar';
 @import './footer';
+@import './column';
+
+// Components
+@import './cards';
+@import './buttons';
+@import './images';

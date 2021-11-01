@@ -1,0 +1,86 @@
+<script src="../scripts/router.js"></script>
+
+<!-- Path -->
+<script>
+    path('/components/cards.html');
+</script>
+
+
+<div class="row">
+    <div class="col-lg-9 col-md-12">
+        <div class="container">
+
+            <h1 class="font-size-huge font-weight-light">Cards</h1>
+            <br>
+            <p class="title font-weight-lighter">Your Universal Container</p>
+            
+
+
+<!-- Simple Card -->
+<a id="simple-card"></a>
+<div class="code-demo">
+
+<h3 class="font-weight-normal">1. Simple Card</h3>
+
+
+<code class="simple-code-snippet border">
+<div class="simple-snippet">
+
+<div class="card col-lg-6 col-sm-12 border">
+    <div class="p-10">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo consequatur error sunt impedit consequuntur adipisci rem excepturi ex porro recusandae?</p>
+    </div>
+</div>
+
+</div>
+</code>
+
+</div>
+
+<!-- Card with image -->
+<a id="image-card"></a>
+<div class="code-demo">
+
+<h3 class="font-weight-normal">2.Card with Image</h3>
+
+<code class="simple-code-snippet border">
+<div class="simple-snippet">
+<div class="card col-lg-6 col-sm-12 border">
+    <!-- class 'fit-img' fits an image in the given width with object fit as cover -->
+    <img class="fit-img" src="https://images.unsplash.com/photo-1635693924419-b0a6abcf2620?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt="Sample">
+
+    <div class="p-10">
+        <p>A mushroom or toadstool is the fleshy, spore-bearing fruiting body of a fungus, typically produced above ground, on soil, or on its food source.</p>
+
+        <!-- Icon Text is a class to help text being more readable by spacing icons and text -->
+        <div class="icon-text"><i class="ri-ancient-gate-line"></i> House</div>
+        <div class="icon-text"><i class="ri-projector-line"></i> Show to Everyone</div>
+    </div>
+</div>
+
+</div>
+</code>
+
+</div>
+
+        </div>
+        <br>
+        <br>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="container fixed">
+            <h1 class="title font-weight-light">Index</h1>
+            <ol>
+                <li><p><a href="#solid-buttons">Simple Card</a></p></li>
+                <li><p><a href="#image-card">Card with Image</a></p></li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.title = "Boilerplate";
+    make_async();
+    loadCodeSnippet();
+</script>

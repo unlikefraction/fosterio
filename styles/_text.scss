@@ -92,3 +92,13 @@ p{
 .accent-text{
     color: var(--accent-color);
 }
+
+
+.icon-text{
+    display: flex;
+    align-content: center;
+
+    i{
+        margin-right: 0.5rem;
+    }
+}
