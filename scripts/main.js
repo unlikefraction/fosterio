@@ -180,3 +180,34 @@ function navToggle(){
         nav.classList.add('nav-on-mobile-open');
     }
 }
+
+
+// Carousel
+function dimentional_carousel(){
+    document.querySelectorAll('.dimentional-carousel').forEach(carousel => {
+        let items = carousel.querySelectorAll('.carousel-item');
+
+        let middle_index = items.length%2 == 0 ? (items.length-2)/2 : (items.length-1)/2;
+
+        let min_scale = 0.9 - (0.1*(items.length-1)/2); // Black
+        let translate_inc = 40; // In %    Orange/10
+        let translate_scale = 2; // Goes in the power    Blue
+        let translate_scale_base = 1.3;     // Red
+
+        let dull_strength = 0.1;
+
+        let scale_inc = (1 - min_scale)/middle_index;
+
+        for(let i = 0; i <= middle_index; i++){
+            // From Left
+            items[i].style.transform = `scale(${min_scale + i*scale_inc}) translateX(${Math.pow((middle_index-i), Math.pow(translate_scale_base, translate_scale))*translate_inc}%)`;
+            items[i].style.zIndex = `${i - middle_index}`;
+            items[i].style.filter = `brightness(${1 - ((middle_index - i)*dull_strength)/middle_index})`;
+
+            // From right
+            items[items.length - 1 - i].style.transform = `scale(${min_scale + i*scale_inc}) translateX(${-1 * Math.pow((middle_index-i), Math.pow(translate_scale_base, translate_scale))*translate_inc}%)`;
+            items[items.length - 1 - i].style.zIndex = `${i - middle_index}`;
+            items[items.length - 1 - i].style.filter = `brightness(${1 - ((middle_index - i)*dull_strength)/middle_index})`;
+        }
+    });
+}

@@ -1,5 +1,5 @@
 let baseURL = "/fosterio/";
-let baseHTML = "/main_content.html"
+let baseHTML = "/main_content.html";
 
 function path(loc, home=false, force_reload=false){
     console.log('Loading Path Now');
