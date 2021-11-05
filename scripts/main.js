@@ -194,9 +194,45 @@ function dimentional_carousel(){
         let translate_scale = 2; // Goes in the power    Blue
         let translate_scale_base = 1.3;     // Red
 
-        let dull_strength = 0.1;
+        let style = getComputedStyle(document.body);
+        let dull_strength = style.getPropertyValue('--carousel-dull-strength');
 
         let scale_inc = (1 - min_scale)/middle_index;
+
+        let controls = carousel.querySelector('.controls');
+        if(controls){
+            controls.innerHTML = '<i class="ri-arrow-left-s-line move-left"></i> <i class="ri-arrow-right-s-line move-right"></i>';
+            function carousel_move_left(){
+                let new_items = [];
+                for(let i=0; i<items.length-1; i++){
+                    new_items.push(items[i].innerHTML);
+                }
+                
+                new_items.unshift(items[items.length-1].innerHTML);
+
+
+                for(let z=0; z<items.length; z++){
+                    items[z].innerHTML = new_items[z];
+                }
+            }
+
+            function carousel_move_right(){
+                let new_items = [];
+                for(let i=1; i<items.length; i++){
+                    new_items.push(items[i].innerHTML);
+                }
+                
+                new_items.push(items[0].innerHTML);
+
+
+                for(let z=0; z<items.length; z++){
+                    items[z].innerHTML = new_items[z];
+                }
+            }
+
+            controls.querySelector('.move-left').addEventListener('click', carousel_move_left);
+            controls.querySelector('.move-right').addEventListener('click', carousel_move_right);
+        }
 
         for(let i = 0; i <= middle_index; i++){
             // From Left
